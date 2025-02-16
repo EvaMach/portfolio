@@ -12,9 +12,6 @@ export default {
 			center: true,
 			padding: "1rem",
 		},
-		fontFamily: {
-			primary: "var(--font-geist-sans)",
-		},
 		screens: {
 			sm: "640px",
 			md: "768px",
@@ -22,9 +19,13 @@ export default {
 			xl: "1280px",
 		},
 		extend: {
+			fontFamily: {
+				primary: "var(--font-geist-sans)",
+			},
 			colors: {
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				background: 'var(--background)',
+				foreground: 'var(--foreground)',
+				accent: 'var(--accent)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
@@ -44,10 +45,6 @@ export default {
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
