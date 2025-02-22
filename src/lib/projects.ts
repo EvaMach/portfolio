@@ -1,21 +1,27 @@
+import beeyImg from "@/lib/img/beey.png";
+import { StaticImageData } from "next/image";
+
 interface Project {
   name: string;
   year: string;
   roles: string;
-  stack: string;
-  libraries: string;
-  description: string;
+  techStack: string[];
+  description: string[];
   link?: string;
-  image: string;
+  image: StaticImageData;
 }
 
 export const projects: Project[] = [
   {
     name: "Beey",
     year: "2020-2025",
-    description: 'cool',
-    roles: "Frontend Developer, Team Lead, Manual and automation tester, UX/UI Designer",
-    stack: "React, TypeScript, JavaScript, Rest API, Git",
-    libraries: "AntDesign, CSS Modules, Quill JS, Jest, Cypress",
-    image: "/project1.jpg",
-  }];
+    roles: "Frontend Developer",
+    techStack: ["React", "TypeScript", "JavaScript", "Quill.js", "Ant Design"],
+    description: [
+      "AI powered platform centered around rich-text editor with subtitle mode and numerous associated plugins and apps.",
+      "I grew together with the project - from testing, through UX/UI design and finally to frontend development with a period in the dev team lead role.",
+    ],
+    link: "https://beey.com",
+    image: beeyImg,
+  }
+];

@@ -24,8 +24,10 @@ export default {
 			},
 			colors: {
 				background: 'var(--background)',
+				backgroundTransparent: 'var(--baground-transparent)',
 				foreground: 'var(--foreground)',
 				accent: 'var(--accent)',
+				accentTransparent: 'var(--accent-transparent)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
