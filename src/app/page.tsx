@@ -1,12 +1,13 @@
+import Contact from '@/components/Contact';
 import About from '../components/About';
 import Work from '../components/Work';
 
 export default function Home() {
   return (
-    <main>
+    <main className='grid gap-16 pt-28'>
       <About />
       <Work />
-      <section id="contact">Contact</section>
+      <Contact />
     </main>
   );
 }
