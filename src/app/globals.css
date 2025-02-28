@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: #122D33;
+    --background: #122633;
     --baground-transparent: #44606740;
     --foreground: white;
     --accent: #FFCF19;
@@ -68,5 +68,16 @@ html {
   }
   h2 {
     @apply text-2xl font-bold mb-2;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
