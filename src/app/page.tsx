@@ -4,7 +4,7 @@ import Work from '../components/Work';
 
 export default function Home() {
   return (
-    <main className='grid gap-16 pt-28'>
+    <main className='grid gap-16'>
       <About />
       <Work />
       <Contact />

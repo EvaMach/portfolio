@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import React from 'react';
 import { MobileNav } from './MobileNav';
+import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className='fixed top-0 bg-background z-10 flex justify-between items-center w-11/12 py-8 xl:py-12'>
-      <Link href="#about">eva</Link>
+    <header className='sticky container px-0 top-0 bg-background opacity-90 z-10 flex justify-between items-center my-4'>
+      <Link href="#about"><Image src="/img/logo.png" alt="Logo" width={70} height={70} /></Link>
       <nav className='hidden lg:flex'>
         <ul className='flex gap-4'>
           <li><Link href="#about">About</Link></li>
