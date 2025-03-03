@@ -1,5 +1,6 @@
 import beeyImg from "../../public/img/beey.webp";
 import beeyLive from "../../public/img/beey-live.webp";
+import code from "../../public/img/code.webp";
 import { StaticImageData } from "next/image";
 
 interface Project {
