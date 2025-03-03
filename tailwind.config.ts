@@ -26,15 +26,7 @@ export default {
 				foreground: 'var(--foreground)',
 				accent: 'var(--accent)',
 				accentTransparent: 'var(--accent-transparent)',
-				accentDark: 'var(--accent-dark)',
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
+				accentLight: 'var(--accent-light)',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -47,11 +39,6 @@ export default {
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
-			}
 		}
 	},
 } satisfies Config;
