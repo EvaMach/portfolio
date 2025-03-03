@@ -6,7 +6,7 @@ interface Props {
 
 const Tag = ({ name }: Props) => {
   return (
-    <span className='bg-accentTransparent text-accent font-medium px-2 py-1 rounded-full'>{name}</span>
+    <span className='bg-accentTransparent text-accent font-medium px-3 py-1 rounded-full'>{name}</span>
   );
 };
 

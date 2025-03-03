@@ -5,9 +5,11 @@
 @layer base {
   :root {
     --background: #122633;
+    --background-dark: #052133;
     --baground-transparent: #44606740;
     --foreground: white;
     --accent: #FFCF19;
+    --accent-dark: #fbc914;
     --accent-transparent: #ffcd191c;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;

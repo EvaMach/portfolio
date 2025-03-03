@@ -5,17 +5,19 @@ import ProjectCard from './ProjectCard';
 const Work = () => {
   return (
     <section id="work" className='scroll-mt-24'>
-      < h2 className='mb-4 font-bold text-4xl' > Work</h2 >
-      <div className='grid gap-4 px-1'>
+      <h2>Work</h2>
+      <p>Here are some of the professional projects I&apos;ve worked on for the last few years.</p>
+      <div className='grid gap-4 px-1 mt-4 justify-items-center'>
         {projects.map((project) => (
           <ProjectCard
             key={project.name}
             image={project.image}
+            client={project.client}
             name={project.name}
             year={project.year}
             role={project.roles}
-            techStack={project.techStack}
-            description={project.description} />))}
+            techStack={project.techTags}
+            description={project.shortDescription} />))}
       </div>
     </section >
   );
