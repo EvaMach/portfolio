@@ -1,10 +1,12 @@
 import beeyImg from "../../public/img/beey.webp";
-import beeyLive from "../../public/img/beey-live.webp";
+import beeyLiveImg from "../../public/img/beey-live.webp";
 import codeImg from "../../public/img/code.webp";
+import mymImg from "../../public/img/mym.webp";
 import { StaticImageData } from "next/image";
 
-interface Project {
-  name: string;
+export interface Project {
+  id: string;
+  title: string;
   client?: string;
   year: string;
   roles: string;
@@ -22,7 +24,8 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    name: "Beey",
+    id: "Beey",
+    title: "Beey",
     client: "Newton Technologies",
     year: "2020-2025",
     roles: "Frontend Developer | Dev Team Lead | QA | UX/UI Design",
@@ -56,7 +59,8 @@ export const projects: Project[] = [
     image: beeyImg,
   },
   {
-    name: "BeeyLive",
+    id: "BeeyLive",
+    title: "Beey Live",
     client: "Newton Technologies",
     year: "2024-2025",
     roles: "Fullstack Developer",
@@ -81,10 +85,11 @@ export const projects: Project[] = [
       "Participated in a hackathon, refining the app ahead of a major presentation event."
     ],
     link: "https://beey.com",
-    image: beeyLive,
+    image: beeyLiveImg,
   },
   {
-    name: "BeeyTrsx library",
+    title: "BeeyTrsx library",
+    id: "BeeyTrsx",
     client: "Newton Technologies",
     year: "2025",
     roles: "Sole Developer",
@@ -108,7 +113,8 @@ export const projects: Project[] = [
     image: codeImg,
   },
   {
-    name: "TimeShift",
+    id: "TimeShift",
+    title: "TimeShift",
     client: "Newton Technologies",
     year: "2023-2025",
     roles: "Frontend Developer",
@@ -136,7 +142,8 @@ export const projects: Project[] = [
     image: beeyImg,
   },
   {
-    name: "Meet Your Mentor",
+    title: "Meet Your Mentor",
+    id: "MyM",
     year: "2024",
     roles: "Frontend Developer",
     client: "Czechitas",
@@ -157,7 +164,7 @@ export const projects: Project[] = [
     contributions: [
       "Conducted user testing and communicated with users, and implemented their feedback and requests"
     ],
-    link: "https://beey.com",
-    image: beeyImg,
+    link: "https://mym.czechitas.cz/",
+    image: mymImg,
   }
 ];

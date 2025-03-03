@@ -10,14 +10,8 @@ const Work = () => {
       <div className='grid gap-4 px-1 mt-4 justify-items-center'>
         {projects.map((project) => (
           <ProjectCard
-            key={project.name}
-            image={project.image}
-            client={project.client}
-            name={project.name}
-            year={project.year}
-            role={project.roles}
-            techStack={project.techTags}
-            description={project.shortDescription} />))}
+            key={project.id}
+            project={project} />))}
       </div>
     </section >
   );

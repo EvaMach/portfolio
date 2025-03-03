@@ -1,17 +1,17 @@
+"use client";
+
 import { projects } from "@/lib/projects";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useParams } from 'next/navigation';
 
-interface Params {
-  params: { name: string; };
-}
-
-export default function ProjectDetailPage({ params }: Params) {
-  const project = projects.find((p) => p.name === params.name);
+export default function ProjectDetailPage() {
+  const params = useParams<{ id: string; }>();
+  const project = projects.find((p) => p.id === params.id);
 
   if (!project) {
-    notFound(); // Returns a 404 page if the ID is not found
+    notFound();
   }
 
   return (
@@ -20,7 +20,7 @@ export default function ProjectDetailPage({ params }: Params) {
         ← Back to Projects
       </Link>
       <div className="ml-8">
-        <h2 className="my-4">{project.name}</h2>
+        <h2 className="my-4">{project.title}</h2>
         <div className="grid gap-2 border-b-2 pb-4 border-accent mb-4">
           <div><span className="text-gray-300 font-semibold">Roles: </span>{project.roles}</div>
           <div><span className="text-gray-300 font-semibold">Team size: </span>{project.team}</div>
@@ -30,7 +30,7 @@ export default function ProjectDetailPage({ params }: Params) {
         </div>
         <div className="flex flex-col justify-center items-center gap-4">
           <p className="mt-2 text-justify">{project.longDescription[0]}</p>
-          <Image className="rounded-lg max-w-lg" src={project.image} alt={`${project.name} app screenshot`} />
+          <Image className="rounded-lg max-w-lg" src={project.image} alt={`${project.title} app screenshot`} />
           <p className="mt-2 text-justify">{project.longDescription[1]}</p>
         </div>
         <div>
