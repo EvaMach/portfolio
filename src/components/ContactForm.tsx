@@ -50,7 +50,7 @@ const ContactForm = () => {
 
 
   return (
-    <Card className="w-1/2">
+    <Card className="md:w-1/2">
       <CardHeader>
         <CardTitle>Get in touch👋</CardTitle>
       </CardHeader>

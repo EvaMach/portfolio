@@ -17,19 +17,19 @@ const ProjectCard = ({ name, year, client, role, techStack, image, description }
   return (
     <div className='relative lg:flex gap-8 justify-between items-start bg-backgroundTransparent px-8 py-6 rounded-xl w-full'>
 
-      <div className='basis-1/2 flex flex-col justify-between h-full'>
+      <div className='basis-1/2 flex flex-col justify-between lg:h-full'>
         <div>
-          <header className="flex justify-between items-baseline mb-1">
+          <header className="flex flex-wrap justify-between items-baseline mb-1">
             <div className="font-semibold text-2xl">{name}</div>
-            <div>{`${year} ${client && `• ${client}`}`}</div>
+            <div className='text-gray-400'>{`${year} ${client && `• ${client}`}`}</div>
           </header>
-          <div className='text-gray-300 font-semibold mb-4'>{role}</div>
+          <div className='text-gray-300 font-semibold mb-2'>{role}</div>
           {description.map((paragraph, index) => (
             <p className='mt-2' key={index}>{paragraph}</p>
           ))}
         </div>
 
-        <div className='flex flex-wrap gap-1'>
+        <div className='flex flex-wrap gap-1 my-4'>
           {techStack.map((tech, index) => (
             <Tag name={tech} key={index} />
           ))}
@@ -38,7 +38,7 @@ const ProjectCard = ({ name, year, client, role, techStack, image, description }
 
       <div className='flex flex-col items-center justify-start lg:items-end basis-1/2'>
         <Link href={`/${name}`}>
-          <ButtonWithIcon className='hover:bg-accentDark absolute right-[-0.3rem] bottom-4 text-gray-900 font-medium bg-accent rounded-s-lg lg:rounded-lg shadow-md p-2 lg:static lg:mb-4 text-right'>Read more</ButtonWithIcon>
+          <ButtonWithIcon className='absolute right-3 bottom-4 lg:static lg:mb-4'>Read more</ButtonWithIcon>
         </Link>
         <Image
           sizes='(max-width: 1024px) 100vw, (max-width: 1400px) 50vw, 40vw'

@@ -1,6 +1,6 @@
 import beeyImg from "../../public/img/beey.webp";
 import beeyLive from "../../public/img/beey-live.webp";
-import code from "../../public/img/code.webp";
+import codeImg from "../../public/img/code.webp";
 import { StaticImageData } from "next/image";
 
 interface Project {
@@ -105,7 +105,7 @@ export const projects: Project[] = [
       "Wrote unit tests to ensure the library's functionality and robustness.",
     ],
     link: "https://beey.com",
-    image: beeyLive,
+    image: codeImg,
   },
   {
     name: "TimeShift",
