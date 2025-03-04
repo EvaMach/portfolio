@@ -1,15 +1,31 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect } from 'react';
 import Tag from './Tag';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Link as LinkIcon } from 'lucide-react';
 import { ButtonWithIcon } from './ui/buttonWithIcon';
 import { Project } from '@/lib/projects';
+
 interface Props {
   project: Project;
 }
 
 const ProjectCard = ({ project }: Props) => {
+
+  useEffect(() => {
+    const savedPosition = sessionStorage.getItem("scrollPosition");
+    if (savedPosition) {
+      window.scrollTo({ top: parseInt(savedPosition, 10) });
+      sessionStorage.removeItem("scrollPosition");
+    }
+  }, []);
+
+  const handleClick = () => {
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+  };
+
   return (
     <div className='relative lg:flex gap-8 justify-between items-start bg-backgroundTransparent p-4 md:px-8 md:py-6 rounded-xl max-w-[65rem]'>
 
@@ -38,7 +54,7 @@ const ProjectCard = ({ project }: Props) => {
       </div>
 
       <div className='flex flex-col items-center justify-start lg:items-end basis-1/2'>
-        <Link href={`/${project.id}`}>
+        <Link href={`/${project.id}`} onClick={handleClick}>
           <ButtonWithIcon className='absolute right-3 bottom-4 lg:static lg:mb-4'>Read more</ButtonWithIcon>
         </Link>
         <Image
