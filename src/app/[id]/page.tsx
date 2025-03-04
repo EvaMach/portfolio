@@ -20,7 +20,13 @@ export default function ProjectDetailPage() {
         ← Back to Projects
       </Link>
       <div className="ml-8">
-        <h2 className="my-4">{project.title}</h2>
+        <div className="flex justify-between">
+          <h2 className="my-4">{project.title}</h2>
+          <div className="text-right">
+            <div className='text-gray-400'>{`${project.year} ${project.client && `• ${project.client}`}`}</div>
+            {project.link && <Link href={project.link}>{project.link}</Link>}
+          </div>
+        </div>
         <div className="grid gap-2 border-b-2 pb-4 border-accent mb-4">
           <div><span className="text-gray-300 font-semibold">Roles: </span>{project.roles}</div>
           <div><span className="text-gray-300 font-semibold">Team size: </span>{project.team}</div>

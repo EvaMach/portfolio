@@ -56,7 +56,7 @@ export const projects: Project[] = [
       "Optimization of processes - introduced Notion, led its adoption within the dev team, and supported company-wide implementation.",
       "Managed GIT workflows, preparing branches for hotfixes and deployments."
     ],
-    link: "https://beey.com",
+    link: "https://editor.beey.io/",
     image: beeyImg,
   },
   {
@@ -85,7 +85,6 @@ export const projects: Project[] = [
       "Developed responsive React components with emphasis on usability across devices.",
       "Participated in a hackathon, refining the app ahead of a major presentation event."
     ],
-    link: "https://beey.com",
     image: beeyLiveImg,
   },
   {
@@ -110,7 +109,6 @@ export const projects: Project[] = [
       "Designed the architecture and implemented the core functionality of the library.",
       "Wrote unit tests to ensure the library's functionality and robustness.",
     ],
-    link: "https://beey.com",
     image: codeImg,
   },
   {

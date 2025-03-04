@@ -45,6 +45,9 @@ html {
   p {
     @apply lg:text-lg;
   }
+  a {
+    @apply hover:underline hover:underline-offset-4 hover:text-accent;
+  }
 }
 
 

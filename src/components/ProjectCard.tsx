@@ -2,6 +2,7 @@ import React from 'react';
 import Tag from './Tag';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Link as LinkIcon } from 'lucide-react';
 import { ButtonWithIcon } from './ui/buttonWithIcon';
 import { Project } from '@/lib/projects';
 interface Props {
@@ -18,12 +19,17 @@ const ProjectCard = ({ project }: Props) => {
             <div className="font-semibold text-2xl min-w-20">{project.title}</div>
             <div className='text-gray-400'>{`${project.year} ${project.client && `• ${project.client}`}`}</div>
           </header>
-          <p className='text-gray-300 font-semibold mb-6'>{project.roles}</p>
+          <p className='text-gray-300 font-semibold mb-2'>{project.roles}</p>
           {project.shortDescription.map((paragraph, index) => (
             <p className='mt-2' key={index}>{paragraph}</p>
           ))}
         </div>
-
+        {project.link && (
+          <div className='flex items-baseline gap-2'>
+            <LinkIcon className='w-4 h-4' />
+            <Link className='mt-2' href={project.link}>{project.link}</Link>
+          </div>
+        )}
         <div className='flex flex-wrap gap-1 my-4'>
           {project.techTags.map((tech, index) => (
             <Tag name={tech} key={index} />
