@@ -1,8 +1,10 @@
-"use client";
+import { FormValues } from "./ContactForm";
 
-const EmailTemplate = () => (
+const EmailTemplate = ({ formValues }: { formValues: FormValues; }) => (
   <div>
-    <h1>Welcome!</h1>
+    {formValues.name && <p>Name: {formValues.name}</p>}
+    {formValues.email && <p>Email: {formValues.email}</p>}
+    {formValues.message && <p>Message: {formValues.message}</p>}
   </div>
 );
 

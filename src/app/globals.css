@@ -11,13 +11,10 @@
     --accent: #FFCF19;
     --accent-light: #ffdf6d;
     --accent-transparent: #ffcd191c;
+    --destructive: #e24545;
     
     --primary: #122633;
     --primary-foreground: white;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
@@ -47,16 +44,5 @@ html {
   }
   a {
     @apply hover:underline hover:underline-offset-4 hover:text-accent;
-  }
-}
-
-
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
