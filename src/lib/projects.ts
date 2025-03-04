@@ -41,15 +41,14 @@ export const projects: Project[] = [
     ],
     longDescription: [
       "Beey is an AI powered online transcription platform that allows its users transcribe recordings, generate automatic or professional subtitles, create summaries, translate content, and more. I watched the project grow from a small tool centered around a rich-text editor with a media player into a robust platform used by thousands. Over time, it evolved to include numerous plugins and associated app like allowing voice recording, live stream transcription, or a powerful subtitle editor.",
-      "I had the unique opportunity to grow alongside this project. Starting as the company's first full-time tester, I was free to establish testing processes and gradually automate some workflows using Cypress. My interest in user experience led me to take on a UI/UX design role before transitioning to frontend development, where I have remained since. For several months, I also served as the development team lead, working closely with the product team, but ultimately returned to hands-on development, where I thrive.",
+      "I had the unique opportunity to grow alongside this project. Starting as the company's first full-time tester, I was free to establish testing processes and gradually automate some workflows using Cypress. My interest in user experience led me to take on a UI/UX design role before transitioning to frontend development, where I have remained since. For several months, I also served as the development team lead, working closely with senior tech leads and the product team, but ultimately returned to hands-on development, where I thrive the most.",
     ],
     contributions: [
       "Developed numerous responsive & reusable React components communicating via REST API.",
-      "Built 2 TS libraries for parsing and burning of subtitles into <canvas/>.",
       "Integrated rich editor features using React, Quill.js and also vanilla TypeScript.",
       "Numerous refactorings big and small, code reviews and bug fixes.",
       "Editor optimization that reduced number of renders and sped up editing.",
-      "Designed and implemented a customer-tailored UI theme, collaborating with customer management and designers.",
+      "Designed and implemented a customer-tailored UI theme, collaborating with clients and their in-house designers.",
       "Large refactoring of the code base styles - introducing theming capabilities, CSS variables, and upgrading to Ant Design 5 new design system",
       "App UI redesign - defining the new company color palette.",
       "Created interactive prototypes in Figma, led user testing and interviews.",
@@ -65,18 +64,17 @@ export const projects: Project[] = [
     client: "Newton Technologies",
     year: "2024-2025",
     roles: "Fullstack Developer",
-    techTags: ["React", "TypeScript", "Python", "Flask", "socket.io", "Ant Design"],
+    techTags: ["React", "TypeScript", "Python", "Flask", "Socket.io", "Ant Design"],
     techStack: ["React", "TypeScript", "Python", "Rest API", "Git"],
     libs: ["Flask", "Socket.io", "Ant Design", "CSS Modules"],
     tools: ["GitHub", "Notion", "Trello"],
     team: " 1 other full-stack developer",
     shortDescription: [
-      "Responsive multi-use app for live subtitling conferences in different languages with minimal delay.",
-      "My initial role was to refactor the existing prototype into production ready version. I mainly contributed to the frontend but also participated in the api design and development.",
+      "A responsive multi-use app for live subtitling at conferences in different languages with minimal delay. Attendees can view real-time subtitles on their phones while a technician sets the transcription itself.",
+      "My initial role was to refactor the existing vanilla JS prototype into a production-ready version using React and Ant Design. While I primarily focused on the frontend, I also contributed to backend development, gaining hands-on experience with Python and Flask.",
     ],
     longDescription: [
       'BeeyLive is an application designed for event preparation and real-time transcription, enabling  live subtitling with minimal delay. Picture a conference where attendees can view live subtitles directly on their phones while a technician set ups the event - hooking up audio, connecting transcription models, and integrating translation engines.',
-
       "I initially took over this project alone, inheriting a basic vanilla JS prototype that needed a complete rewrite in order to be production ready. Opting for React and Ant Design (commonly used within the company), I restructured the codebase into a maintainable, modern application. Later, a more senior colleague joined, and together we expanded the app’s functionalities. The project's smaller scale also allowed me to explore backend development, where I gained hands-on experience with Python and Flask."
     ],
     contributions: [
@@ -88,7 +86,7 @@ export const projects: Project[] = [
     image: beeyLiveImg,
   },
   {
-    title: "BeeyTrsx library",
+    title: "Beey parser library",
     id: "BeeyTrsx",
     client: "Newton Technologies",
     year: "2025",
@@ -99,15 +97,18 @@ export const projects: Project[] = [
     tools: ["GitHub"],
     team: "Just me",
     shortDescription: [
-      "Utiliy npm package for Beey to parse and format transcription files.",
-      "A great project that I got to build on my own from scratch with the main aim to make it robust and reliable. It was a great opportunity to write more unit tests and contribute to the Beey ecosystem.",
+      "A utility npm package for Beey, designed to parse and format transcription data from a specific file format.",
+      "I had the great opportunity to build this project on my own, focusing on robustness, maintainability, and reliability. It also allowed me to learn more about writing unit tests and trying out Mocha and Chai.",
     ],
     longDescription: [
-
+      "This parser library was developed to safely extract transcription and caption data from the Beey's proprietary file format, replacing older, less maintainable code. The goal was to create a standalone library that adheres to best practices, ensuring robustness, maintainability, and reliability. To enhance its stability, I implemented comprehensive unit tests covering most of the library's functionality, allowing me to catch potential bugs and maintain long-term reliability.",
+      "Through this project, I learned a lot about the importance of good design and testability. While experimenting with different parsers as the library’s foundation, the code evolved significantly, yet its functionality remained intact thanks to the extensive tests written with Mocha and Chai.",
     ],
     contributions: [
-      "Designed the architecture and implemented the core functionality of the library.",
-      "Wrote unit tests to ensure the library's functionality and robustness.",
+      "Designed and written the library implementing a reliable parser while following best practices.",
+      "Ensured compatibility with existing Beey systems and workflows.",
+      "Covered most of the library's functionality with unit tests.",
+      "Improved error handling  for more reliable data extraction.",
     ],
     image: codeImg,
   },
@@ -123,8 +124,8 @@ export const projects: Project[] = [
     tools: ["GitHub", "Notion"],
     team: "1 other frontend developer, 1-2 backend developers",
     shortDescription: [
-      "Platform to record and overview live TV and radio broadcasts. Including dashboards, video player and timelines.",
-      "The challenge in this project was to quickly develop it in from the ground up in a team of 4 developers based on a legacy app behavior.",
+      "A platform for recording and monitoring live TV and radio broadcasts, featuring dashboards, a video player, and interactive timelines.",
+      "The challenge was to rapidly develop the application from the ground up in a team of four, using the behavior of a legacy app as a foundation.",
     ],
     longDescription: [
       "TimeShift is a recording hub designed to record and manage numerous TV and radio channels. The UI includes dashboards for monitoring data, erros and overall usage, along with a large interactive timeline showacasing recorded segments.",
@@ -156,7 +157,6 @@ export const projects: Project[] = [
     ],
     longDescription: [
       "This small in-house project was developed to facilitate mentor-mentee matching during Czechitas Digital Academies.",
-
       "I joined the project owner and contributed  several features, primarily focusing on styling to enhance responsiveness and usability."
     ],
     contributions: [

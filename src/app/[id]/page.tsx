@@ -30,9 +30,9 @@ export default function ProjectDetailPage() {
         <div className="grid gap-2 border-b-2 pb-4 border-accent mb-4">
           <div><span className="text-gray-300 font-semibold">Roles: </span>{project.roles}</div>
           <div><span className="text-gray-300 font-semibold">Team size: </span>{project.team}</div>
-          <div><span className="text-gray-300 font-semibold">Tech stack: </span>{project.techStack.map((tech, index) => <span key={index}>{tech}, </span>)}</div>
-          <div><span className="text-gray-300 font-semibold">Frameworks & Libraries: </span>{project.libs.map((lib, index) => <span key={index}>{lib}, </span>)}</div>
-          <div><span className="text-gray-300 font-semibold">Tools: </span>{project.tools.map((tool, index) => <span key={index}>{tool}, </span>)}</div>
+          <div><span className="text-gray-300 font-semibold">Tech stack: </span>{project.techStack.join(", ")}</div>
+          <div><span className="text-gray-300 font-semibold">Frameworks & Libraries: </span>{project.libs.join(", ")}</div>
+          <div><span className="text-gray-300 font-semibold">Tools: </span>{project.tools.join(", ")}</div>
         </div>
         <div className="flex flex-col justify-center items-center gap-4">
           <p className="mt-2 text-justify">{project.longDescription[0]}</p>
