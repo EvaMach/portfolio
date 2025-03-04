@@ -31,7 +31,7 @@ export const projects: Project[] = [
     year: "2020-2025",
     roles: "Frontend Developer | Dev Team Lead | QA | UX/UI Design",
     techTags: ["React", "TypeScript", "Quill.js", "Ant Design", "Cypress"],
-    techStack: ["React", "TypeScript", "JavaScript", "Rest API", "Git"],
+    techStack: ["React", "TypeScript", "JavaScript", "REST API", "Git"],
     libs: ["Quill.js", "Ant Design", "CSS Modules", "Jest", "Cypress"],
     tools: ["GitLab", "GitHub", "Figma", "Notion", "Trello"],
     team: 'Other 2-4 frontend developers, 3-5 backend developers, and 1 tester',
@@ -45,15 +45,14 @@ export const projects: Project[] = [
     ],
     contributions: [
       "Developed numerous responsive & reusable React components communicating via REST API.",
-      "Integrated rich editor features using React, Quill.js and also vanilla TypeScript.",
-      "Numerous refactorings big and small, code reviews and bug fixes.",
+      "Integrated rich editor features using React, Quill.js and TypeScript.",
       "Editor optimization that reduced number of renders and sped up editing.",
       "Designed and implemented a customer-tailored UI theme, collaborating with clients and their in-house designers.",
       "Large refactoring of the code base styles - introducing theming capabilities, CSS variables, and upgrading to Ant Design 5 new design system",
       "App UI redesign - defining the new company color palette.",
       "Created interactive prototypes in Figma, led user testing and interviews.",
       "Optimization of processes - introduced Notion, led its adoption within the dev team, and supported company-wide implementation.",
-      "Managed GIT workflows, preparing branches for hotfixes and deployments."
+      "Managed Git workflows, preparing branches for hotfixes and deployments."
     ],
     link: "https://editor.beey.io/",
     image: beeyImg,
@@ -70,11 +69,11 @@ export const projects: Project[] = [
     tools: ["GitHub", "Notion", "Trello"],
     team: " 1 other full-stack developer",
     shortDescription: [
-      "A responsive multi-use app for live subtitling at conferences in different languages with minimal delay. Attendees can view real-time subtitles on their phones while a technician sets the transcription itself.",
+      "A responsive multi-use app for live subtitling at conferences in different languages with minimal delay.",
       "My initial role was to refactor the existing vanilla JS prototype into a production-ready version using React and Ant Design. While I primarily focused on the frontend, I also contributed to backend development, gaining hands-on experience with Python and Flask.",
     ],
     longDescription: [
-      'BeeyLive is an application designed for event preparation and real-time transcription, enabling  live subtitling with minimal delay. Picture a conference where attendees can view live subtitles directly on their phones while a technician set ups the event - hooking up audio, connecting transcription models, and integrating translation engines.',
+      'BeeyLive is an application designed for event preparation and real-time transcription, enabling  live subtitling with minimal delay. Picture a conference where attendees can view live subtitles directly on their phones while a technician set ups the event - hooking up audio, configuring transcription, and integrating translation engines.',
       "I initially took over this project alone, inheriting a basic vanilla JS prototype that needed a complete rewrite in order to be production ready. Opting for React and Ant Design (commonly used within the company), I restructured the codebase into a maintainable, modern application. Later, a more senior colleague joined, and together we expanded the app’s functionalities. The project's smaller scale also allowed me to explore backend development, where I gained hands-on experience with Python and Flask."
     ],
     contributions: [
@@ -128,7 +127,7 @@ export const projects: Project[] = [
       "The challenge was to rapidly develop the application from the ground up in a team of four, using the behavior of a legacy app as a foundation.",
     ],
     longDescription: [
-      "TimeShift is a recording hub designed to record and manage numerous TV and radio channels. The UI includes dashboards for monitoring data, erros and overall usage, along with a large interactive timeline showacasing recorded segments.",
+      "TimeShift is a recording hub designed to record and manage numerous TV and radio channels. The UI includes dashboards for monitoring data, errors and overall usage, along with a large interactive timeline showcasing recorded segments.",
 
       "I joined this project alongside a more senior colleague, and together we built the application from the ground up, using the UX of an older, now obsolete app as a foundation. With a tight deadline, we worked closely with the product team, iteratively refining the app until it was production-ready in under a year."
     ],
