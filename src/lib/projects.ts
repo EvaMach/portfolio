@@ -2,6 +2,7 @@ import beeyImg from "../../public/img/beey.webp";
 import beeyLiveImg from "../../public/img/beey-live.webp";
 import codeImg from "../../public/img/code.webp";
 import mymImg from "../../public/img/mym.webp";
+import timeShiftImg from "../../public/img/timeshift.webp";
 import { StaticImageData } from "next/image";
 
 export interface Project {
@@ -138,8 +139,7 @@ export const projects: Project[] = [
       "Built React components that communicate with REST API, performed refactorings, and conducted code reviews.",
       "Engaged frequently with the product team and users, iterating on their feedback to improve the app."
     ],
-    link: "https://beey.com",
-    image: beeyImg,
+    image: timeShiftImg,
   },
   {
     title: "Meet Your Mentor",

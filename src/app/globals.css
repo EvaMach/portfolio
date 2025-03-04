@@ -42,6 +42,9 @@ html {
   h2 {
     @apply text-2xl font-bold mb-2;
   }
+  p {
+    @apply lg:text-lg;
+  }
 }
 
 

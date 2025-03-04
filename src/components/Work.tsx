@@ -6,7 +6,7 @@ const Work = () => {
   return (
     <section id="work" className='scroll-mt-24'>
       <h2>Work</h2>
-      <p>Here are some of the professional projects I&apos;ve worked on for in the last few years.</p>
+      <p>Here are some of the professional projects I&apos;ve worked on in the last few years.</p>
       <div className='grid gap-4 px-1 mt-4 justify-items-center'>
         {projects.map((project) => (
           <ProjectCard

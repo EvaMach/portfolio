@@ -10,15 +10,15 @@ interface Props {
 
 const ProjectCard = ({ project }: Props) => {
   return (
-    <div className='relative lg:flex gap-8 justify-between items-start bg-backgroundTransparent px-8 py-6 rounded-xl w-full'>
+    <div className='relative lg:flex gap-8 justify-between items-start bg-backgroundTransparent p-4 md:px-8 md:py-6 rounded-xl max-w-[65rem]'>
 
       <div className='basis-1/2 flex flex-col justify-between lg:h-full'>
         <div>
           <header className="flex flex-wrap justify-between items-baseline mb-1">
-            <div className="font-semibold text-2xl">{project.title}</div>
+            <div className="font-semibold text-2xl min-w-20">{project.title}</div>
             <div className='text-gray-400'>{`${project.year} ${project.client && `• ${project.client}`}`}</div>
           </header>
-          <div className='text-gray-300 font-semibold mb-2'>{project.roles}</div>
+          <p className='text-gray-300 font-semibold mb-6'>{project.roles}</p>
           {project.shortDescription.map((paragraph, index) => (
             <p className='mt-2' key={index}>{paragraph}</p>
           ))}
