@@ -22,7 +22,7 @@ export default function ProjectDetailPage() {
       <div className="ml-8">
         <div className="flex justify-between">
           <h2 className="my-4">{project.title}</h2>
-          <div className="text-right">
+          <div className="hidden md:block text-right">
             <div className='text-gray-400'>{`${project.year} ${project.client && `• ${project.client}`}`}</div>
             {project.link && <Link href={project.link}>{project.link}</Link>}
           </div>
