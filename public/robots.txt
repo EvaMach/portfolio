@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://eva-machova.cz
+
+# Sitemaps
+Sitemap: https://eva-machova.cz/sitemap.xml
