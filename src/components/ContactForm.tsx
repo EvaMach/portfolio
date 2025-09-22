@@ -6,7 +6,12 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
-  Form, FormControl, FormField, FormItem, FormLabel, FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -28,7 +33,7 @@ const formSchema = z.object({
   }),
   message: z.string().min(10, {
     message: "Please enter a message of at least 10 characters",
-  })
+  }),
 });
 
 const ContactForm = () => {
@@ -41,22 +46,29 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = (values: FormValues) => {
+  const onSubmit = async (values: FormValues) => {
     try {
-      send(values);
+      const response = await send(values);
+
+      if (response && "error" in response) {
+        throw new Error(response.error?.message || "Failed to send email");
+      }
+
       form.reset();
-      toast("Thank you for reaching out! 🤩 I will get back to you as soon as possible.", {
-        position: "bottom-center",
-      });
+      toast(
+        "Thank you for reaching out! 🤩 I will get back to you as soon as possible.",
+        {
+          position: "bottom-center",
+        }
+      );
     } catch (error) {
       toast("Something went wrong. Please try again.", {
-        style: { backgroundColor: 'var(--destructive)', color: 'white' },
+        style: { backgroundColor: "var(--destructive)", color: "white" },
         position: "bottom-center",
       });
       console.error(error);
     }
   };
-
 
   return (
     <Card className="w-full md:w-1/2">
@@ -65,7 +77,10 @@ const ContactForm = () => {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full :w-1/2">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-4 w-full :w-1/2"
+          >
             <FormField
               control={form.control}
               name="name"
