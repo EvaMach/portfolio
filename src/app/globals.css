@@ -8,11 +8,11 @@
     --background-dark: #052133;
     --baground-transparent: #44606740;
     --foreground: white;
-    --accent: #FFCF19;
+    --accent: #ffcf19;
     --accent-light: #ffdf6d;
     --accent-transparent: #ffcd191c;
     --destructive: #e24545;
-    
+
     --primary: #122633;
     --primary-foreground: white;
     --border: 214.3 31.8% 91.4%;
@@ -23,7 +23,7 @@
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -31,7 +31,15 @@ html {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-primary;
+    @apply text-foreground font-primary;
+    background: var(--background);
+    background-image: radial-gradient(
+      ellipse 80vw 60vh at top right,
+      rgba(255, 207, 25, 0.1) 0%,
+      rgba(255, 223, 109, 0.05) 40%,
+      transparent 70%
+    );
+    min-height: 100vh;
   }
   h1 {
     @apply text-3xl lg:text-5xl font-bold;
