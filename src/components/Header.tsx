@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-10 flex justify-between items-center my-4 mx-5 sm:mx-10 md:mx-[15%] transition-all duration-300 ${
+      className={`sticky top-0 z-10 flex justify-between items-center my-4 px-5 sm:px-10 md:px-[15%] transition-all duration-300 ${
         isScrolled ? "bg-background/80 backdrop-blur-md" : "opacity-90"
       }`}
     >
