@@ -22,8 +22,8 @@ const About = () => {
           </p>
           <p className="mb-4 lg:text-xl">
             I like building things that make you say{" "}
-            <span className="italic">"oh, that's cool"</span> whether you're a
-            user or a fellow developer. ✨
+            <span className="italic">"oh, that&apos;s cool"</span> whether
+            you&apos;re a user or a fellow developer. ✨
           </p>
         </div>
         <Image
@@ -49,7 +49,7 @@ const About = () => {
       <p className="mb-4 lg:text-lg text-justify">
         My tech journey has taken me from testing (manual and automated),
         through UX/UI design, to frontend development with a period in a dev
-        team lead role along the way.
+        team lead role along the way. Yes, I do like a challenge. 😅
       </p>
       <p className="mb-4 lg:text-lg text-justify">
         In my daily work, I care about clean, maintainable code and like leaving
@@ -57,8 +57,8 @@ const About = () => {
         and exploring new technologies - lately Python and React Native.
       </p>
       <p className="mb-4 lg:text-lg text-justify">
-        Over the past few years, I’ve worked with teams on a range of projects,
-        always focusing on usability, performance, and great user{" "}
+        Over the past few years, I&apos;ve worked with teams on a range of
+        projects, always focusing on usability, performance, and great user{" "}
         <span className="italic">and</span> developer experience. 🚀
       </p>
     </section>
