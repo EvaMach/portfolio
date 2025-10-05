@@ -22,8 +22,8 @@ const About = () => {
           </p>
           <p className="mb-4 lg:text-xl">
             I like building things that make you say{" "}
-            <span className="italic">"oh, that&apos;s cool"</span> whether
-            you&apos;re a user or a fellow developer. ✨
+            <span className="italic">&quot;oh, that&apos;s cool&quot;</span>{" "}
+            whether you&apos;re a user or a fellow developer. ✨
           </p>
         </div>
         <Image
