@@ -145,7 +145,7 @@ const ProjectCard = ({ project, index }: Props) => {
 
         <div className="lg:basis-1/2 w-full">
           <Link href={`/${project.id}`} onClick={handleClick}>
-            <div className="rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+            <div className="rounded-xl overflow-hidden">
               <Image
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full rounded-xl"

@@ -28,10 +28,24 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const toggle = () => {
     const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    localStorage.setItem("theme", next);
-    document.documentElement.classList.remove("dark", "light");
-    document.documentElement.classList.add(next);
+
+    const apply = () => {
+      setTheme(next);
+      localStorage.setItem("theme", next);
+      document.documentElement.classList.remove("dark", "light");
+      document.documentElement.classList.add(next);
+    };
+
+    const doc = document as Document & {
+      startViewTransition?: (cb: () => void) => void;
+    };
+
+    if (!doc.startViewTransition) {
+      apply();
+      return;
+    }
+
+    doc.startViewTransition(apply);
   };
 
   return (

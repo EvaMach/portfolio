@@ -52,7 +52,7 @@ const Header = () => {
         >
           <Link href={isHome ? "#about" : "/"} className="flex-shrink-0">
             <Image
-              src="/img/logo.png"
+              src={theme === "dark" ? "/img/logo-dark.png" : "/img/logo-light.png"}
               alt="Eva Machová logo"
               width={56}
               height={56}
@@ -94,7 +94,7 @@ const Header = () => {
             <button
               onClick={toggle}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 hover:scale-110"
+              className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 hover:scale-110 active:scale-90"
               style={{
                 color: "var(--text-secondary)",
                 background: "var(--bg-tertiary)",

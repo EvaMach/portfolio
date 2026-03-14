@@ -27,7 +27,7 @@ const Hero = () => {
               lineHeight: "1.15",
             }}
           >
-            I build <span className="gradient-text">things.</span>
+            I <span className="gradient-text">build </span> things.
           </h2>
 
           <p
@@ -95,55 +95,48 @@ const Hero = () => {
           />
 
           <div
-            className="hero-shape-1 absolute w-10 h-10 rounded-full border-2 hidden xs:block"
+            className="hero-shape-1 absolute z-20 w-14 h-14 rounded-full hidden xs:block"
             style={{
-              borderColor: "var(--accent-primary)",
-              top: "5%",
-              right: "10%",
+              background:
+                "radial-gradient(circle at 40% 35%, var(--accent-primary) 0%, var(--accent-primary) 40%, transparent 100%)",
+              bottom: "22%",
+              right: "2%",
+              opacity: 0.9,
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="hero-shape-2 absolute w-8 h-8 rounded-lg rotate-45 hidden xs:block"
+            style={{
+              background:
+                "radial-gradient(circle at 35% 35%, var(--accent-tertiary) 0%, var(--accent-tertiary) 35%, transparent 100%)",
+              bottom: "15%",
+              left: "5%",
+              opacity: 0.85,
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="hero-shape-3 absolute w-10 h-10 rounded-full hidden xs:block"
+            style={{
+              background:
+                "radial-gradient(circle at 40% 35%, var(--accent-secondary) 0%, var(--accent-secondary) 35%, transparent 100%)",
+              top: "15%",
+              left: "8%",
               opacity: 0.7,
             }}
             aria-hidden="true"
           />
-          <div
-            className="hero-shape-2 absolute w-6 h-6 rounded-sm rotate-45 hidden xs:block"
-            style={{
-              background: "var(--accent-tertiary)",
-              bottom: "15%",
-              left: "5%",
-              opacity: 0.6,
-            }}
-            aria-hidden="true"
-          />
-          <div
-            className="hero-shape-3 absolute w-8 h-8 rounded-full hidden xs:block"
-            style={{
-              background: "var(--accent-secondary)",
-              top: "15%",
-              left: "8%",
-              opacity: 0.4,
-            }}
-            aria-hidden="true"
-          />
 
-          <div
-            className="relative z-10 w-48 h-48 md:w-64 md:h-64 rounded-full p-[2px]"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)",
-            }}
-          >
-            <div className="w-full h-full rounded-full overflow-hidden"
-              style={{ background: "var(--bg-primary)" }}
-            >
-              <Image
-                src={myPic}
-                alt="Eva Machová — frontend developer"
-                fill
-                sizes="(max-width: 768px) 192px, 256px"
-                className="object-cover object-top"
-                priority
-              />
-            </div>
+          <div className="relative z-10 w-48 h-48 md:w-64 md:h-64 overflow-hidden">
+            <Image
+              src={myPic}
+              alt="Eva Machová — frontend developer"
+              fill
+              sizes="(max-width: 768px) 192px, 256px"
+              className="object-cover object-top"
+              priority
+            />
           </div>
         </div>
       </div>
