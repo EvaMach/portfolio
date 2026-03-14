@@ -1,8 +1,15 @@
 const Footer = () => {
   return (
-    <footer className="flex justify-between px-10 w-full text-center bg-backgroundDark py-4">
-      <span className="text-gray-400">©2025 by Eva Machová.</span>
-      <span className="text-gray-400">Still a work in progress so please be patient. 😇</span>
+    <footer
+      className="flex flex-wrap justify-between items-center gap-2 px-5 sm:px-10 md:px-[15%] py-6 mt-8"
+      style={{
+        borderTop: "1px solid var(--border-subtle)",
+        color: "var(--text-secondary)",
+        fontSize: "0.875rem",
+      }}
+    >
+      <span>©2025 Eva Machová</span>
+      <span>Built with Next.js &amp; Tailwind CSS</span>
     </footer>
   );
 };
