@@ -48,16 +48,7 @@ const ProjectCard = ({ project, index }: Props) => {
         (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 transparent";
       }}
     >
-      {/* Project number — decorative */}
-      <span
-        className="absolute top-5 right-6 text-5xl font-extrabold select-none pointer-events-none"
-        style={{ color: "var(--accent-secondary)", opacity: 0.12 }}
-        aria-hidden="true"
-      >
-        /{String(index + 1).padStart(2, "0")}
-      </span>
-
-      <div
+<div
         className={`flex flex-col ${
           imageRight ? "lg:flex-row" : "lg:flex-row-reverse"
         } gap-8 items-start`}

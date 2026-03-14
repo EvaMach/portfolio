@@ -37,12 +37,10 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex justify-center px-4 py-4">
+      <header className="sticky top-0 z-50 px-5 sm:px-10 md:px-[15%] py-4">
         <nav
-          className={`flex items-center gap-6 px-5 py-3 rounded-2xl transition-all duration-300 ${
-            isScrolled
-              ? "shadow-lg shadow-black/20"
-              : ""
+          className={`flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-300 w-full ${
+            isScrolled ? "shadow-lg shadow-black/20" : ""
           }`}
           style={{
             background: isScrolled
@@ -64,63 +62,71 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop nav links */}
-          {isHome && (
-            <ul className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-[1.03]"
-                    style={{ color: "var(--text-secondary)" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "var(--accent-primary)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "var(--text-secondary)")
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {/* Theme toggle */}
-          <button
-            onClick={toggle}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 hover:scale-110"
-            style={{
-              color: "var(--text-secondary)",
-              background: "var(--bg-tertiary)",
-              border: "1px solid var(--border-subtle)",
-            }}
-          >
-            {theme === "dark" ? (
-              <Sun size={15} />
-            ) : (
-              <Moon size={15} />
+          {/* Right side: nav links + controls */}
+          <div className="flex items-center gap-2">
+            {/* Desktop nav links */}
+            {isHome && (
+              <ul className="hidden md:flex items-center gap-1">
+                {navLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-[1.03]"
+                      style={{ color: "var(--text-secondary)" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--accent-primary)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "var(--text-secondary)")
+                      }
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             )}
-          </button>
 
-          {/* Mobile hamburger */}
-          {isHome && (
+            {/* Divider */}
+            {isHome && (
+              <div
+                className="hidden md:block w-px h-4 mx-1"
+                style={{ background: "var(--border-subtle)" }}
+                aria-hidden="true"
+              />
+            )}
+
+            {/* Theme toggle */}
             <button
-              className="flex items-center justify-center w-8 h-8 rounded-lg md:hidden transition-all duration-200"
+              onClick={toggle}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 hover:scale-110"
               style={{
                 color: "var(--text-secondary)",
                 background: "var(--bg-tertiary)",
                 border: "1px solid var(--border-subtle)",
               }}
-              onClick={() => setMobileOpen((v) => !v)}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
             >
-              {mobileOpen ? <X size={15} /> : <Menu size={15} />}
+              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
             </button>
-          )}
+
+            {/* Mobile hamburger */}
+            {isHome && (
+              <button
+                className="flex items-center justify-center w-8 h-8 rounded-lg md:hidden transition-all duration-200"
+                style={{
+                  color: "var(--text-secondary)",
+                  background: "var(--bg-tertiary)",
+                  border: "1px solid var(--border-subtle)",
+                }}
+                onClick={() => setMobileOpen((v) => !v)}
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <X size={15} /> : <Menu size={15} />}
+              </button>
+            )}
+          </div>
         </nav>
       </header>
 

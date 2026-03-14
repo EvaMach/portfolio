@@ -8,8 +8,7 @@ const Footer = () => {
         fontSize: "0.875rem",
       }}
     >
-      <span>©2025 Eva Machová</span>
-      <span>Built with Next.js &amp; Tailwind CSS</span>
+      <span>©2026 Eva Machová</span>
     </footer>
   );
 };
