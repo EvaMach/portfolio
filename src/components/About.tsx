@@ -21,11 +21,11 @@ const skills = [
 ];
 
 const timeline = [
+  { role: "MA Linguistics", years: "–2020" },
   { role: "QA Engineer", years: "2019–2020" },
-  { role: "UX/UI Designer", years: "2020–2021" },
   { role: "Frontend Dev", years: "2021–2024" },
-  { role: "Dev Team Lead", years: "2023" },
-  { role: "Fullstack Dev", years: "2024–2025" },
+  { role: "Fullstack & Lead", years: "2023–2025" },
+  { role: "AI & Mobile", years: "2025–" },
 ];
 
 const About = () => {
@@ -50,8 +50,9 @@ const About = () => {
               lineHeight: "1.75",
             }}
           >
-            My tech journey has taken me from testing (manual and automated),
-            through UX/UI design, to frontend development with a period in a{" "}
+            After my MA in linguistics I was drawn to tech and started in QA.
+            My passion for UX/UI led me into frontend development, and after a
+            period as{" "}
             <span
               className="font-semibold rounded px-1"
               style={{
@@ -62,7 +63,8 @@ const About = () => {
             >
               dev team lead
             </span>{" "}
-            role along the way.
+            I deep-dived back into technology — moving into mobile and
+            AI-driven backends, circling back to my linguistic roots.
           </p>
           <p
             className="mb-5"
@@ -72,7 +74,7 @@ const About = () => {
               lineHeight: "1.75",
             }}
           >
-            In my daily work, I care about{" "}
+            I care about{" "}
             <span
               className="font-semibold rounded px-1"
               style={{
@@ -83,9 +85,8 @@ const About = () => {
             >
               clean, maintainable code
             </span>{" "}
-            and like leaving things better than I found them. I enjoy
-            collaborating, reviewing code, and exploring new technologies —
-            lately Python and React Native.
+            and like leaving things better than I found them. My goal stays
+            the same: build things that make users go &ldquo;oh, that&apos;s cool.&rdquo;
           </p>
           <p
             style={{
@@ -94,9 +95,9 @@ const About = () => {
               lineHeight: "1.75",
             }}
           >
-            Over the past few years, I&apos;ve worked with teams on a range of
-            projects, always focusing on usability, performance, and great user{" "}
-            <em>and</em> developer experience.
+            I enjoy a challenge and keep learning — through code reviews,
+            conferences, and teaching. Lately that means Python, React Native,
+            and the AI shift that&apos;s pulling everything back toward language.
           </p>
         </div>
 

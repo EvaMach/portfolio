@@ -38,9 +38,9 @@ const Hero = () => {
               lineHeight: "1.7",
             }}
           >
-            A software developer with a background in QA and UX/UI design. I
-            care about clean code, great user experience, and leaving things
-            better than I found them.
+            Started in QA with a passion for UX, fell in love with coding, and
+            never looked back. Now exploring mobile and AI-driven backends —
+            a full circle back to my linguistics roots.
           </p>
 
           <div className="hero-cta flex flex-wrap gap-3">

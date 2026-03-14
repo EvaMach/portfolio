@@ -23,6 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Eva Machová - Frontend Developer",
+  icons: {
+    icon: "/img/logo-light.png",
+  },
 };
 
 export default function RootLayout({
