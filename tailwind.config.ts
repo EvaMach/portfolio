@@ -20,7 +20,6 @@ export default {
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       colors: {
-        /* New design system tokens */
         "bg-primary": "var(--bg-primary)",
         "bg-secondary": "var(--bg-secondary)",
         "bg-tertiary": "var(--bg-tertiary)",

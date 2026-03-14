@@ -24,7 +24,6 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <div style={{ color: "var(--text-primary)" }}>
-      {/* ── HERO BANNER ── */}
       <div
         className="relative px-5 sm:px-10 md:px-[15%] pt-10 pb-32"
         style={{
@@ -32,7 +31,6 @@ export default async function ProjectDetailPage({ params }: Props) {
             "linear-gradient(160deg, color-mix(in srgb, var(--accent-primary) 12%, var(--bg-primary)) 0%, var(--bg-primary) 70%)",
         }}
       >
-        {/* Back link */}
         <Link
           href="/#work"
           className="inline-flex items-center gap-1.5 text-sm font-medium mb-8 transition-colors duration-200 hover:text-accent-primary"
@@ -42,7 +40,6 @@ export default async function ProjectDetailPage({ params }: Props) {
           Back to projects
         </Link>
 
-        {/* Title & meta */}
         <div className="max-w-2xl">
           <h1
             className="font-extrabold mb-3"
@@ -57,7 +54,6 @@ export default async function ProjectDetailPage({ params }: Props) {
             {project.shortDescription[0]}
           </p>
 
-          {/* Metadata row */}
           <div
             className="flex flex-wrap gap-x-6 gap-y-2 text-sm mb-5"
             style={{ color: "var(--text-secondary)" }}
@@ -82,7 +78,6 @@ export default async function ProjectDetailPage({ params }: Props) {
             </span>
           </div>
 
-          {/* Live link */}
           {project.link && (
             <Link
               href={project.link}
@@ -99,7 +94,6 @@ export default async function ProjectDetailPage({ params }: Props) {
             </Link>
           )}
 
-          {/* Tech stack pills */}
           <div className="flex flex-wrap gap-2 mt-2">
             {project.techTags.map((tag) => (
               <span
@@ -118,7 +112,6 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Hero image — overlaps the gradient */}
       <div className="px-5 sm:px-10 md:px-[15%] -mt-20 mb-16">
         <div
           className="rounded-2xl overflow-hidden shadow-2xl"
@@ -133,7 +126,6 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── OVERVIEW ── */}
       <div className="px-5 sm:px-10 md:px-[15%] py-12">
         <div className="section-label">Overview</div>
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-12 mt-4">
@@ -152,7 +144,6 @@ export default async function ProjectDetailPage({ params }: Props) {
             ))}
           </div>
 
-          {/* Sidebar */}
           <div
             className="rounded-2xl p-6 self-start space-y-4"
             style={{
@@ -187,7 +178,6 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── MY ROLE ── */}
       <div
         className="px-5 sm:px-10 md:px-[15%] py-12"
         style={{ borderTop: "1px solid var(--border-subtle)" }}
@@ -217,7 +207,6 @@ export default async function ProjectDetailPage({ params }: Props) {
         </ul>
       </div>
 
-      {/* ── TECH STACK DETAIL ── */}
       <div
         className="px-5 sm:px-10 md:px-[15%] py-12"
         style={{ borderTop: "1px solid var(--border-subtle)" }}
@@ -254,7 +243,6 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── PROJECT NAVIGATION ── */}
       <div
         className="grid grid-cols-1 md:grid-cols-2"
         style={{ borderTop: "1px solid var(--border-subtle)" }}

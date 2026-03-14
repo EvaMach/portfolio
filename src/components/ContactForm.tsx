@@ -114,7 +114,6 @@ const ContactForm = () => {
         </div>
       ))}
 
-      {/* Textarea */}
       <div>
         <label
           htmlFor="message"

@@ -42,3 +42,7 @@ No test suite is configured.
 ### Email
 
 Requires `.env` with `RESEND_API_KEY`, `RESEND_SENDER`, and `RESEND_RECEIVER`. The contact form uses React Hook Form + Zod validation, submitting to a Next.js API route that calls Resend.
+
+## Code style
+
+**Comments**: Use sparingly. Comments should explain *why*, never *what* or *how* — clean code and well-named variables are always preferred over comments. Do not add structural JSX comments (e.g. `{/* Logo */}`, `{/* Left column */}`) — the code speaks for itself.

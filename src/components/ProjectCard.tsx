@@ -53,9 +53,7 @@ const ProjectCard = ({ project, index }: Props) => {
           imageRight ? "lg:flex-row" : "lg:flex-row-reverse"
         } gap-8 items-start`}
       >
-        {/* Text column */}
         <div className="flex flex-col gap-4 lg:basis-1/2 z-10">
-          {/* Header */}
           <div>
             <h3
               className="font-bold text-2xl mb-1"
@@ -70,7 +68,6 @@ const ProjectCard = ({ project, index }: Props) => {
               {project.year}
               {project.client && ` · ${project.client}`}
             </div>
-            {/* Role badge */}
             <span
               className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
               style={{
@@ -84,7 +81,6 @@ const ProjectCard = ({ project, index }: Props) => {
             </span>
           </div>
 
-          {/* Description */}
           <div className="space-y-2">
             {project.shortDescription.map((paragraph, i) => (
               <p
@@ -97,7 +93,6 @@ const ProjectCard = ({ project, index }: Props) => {
             ))}
           </div>
 
-          {/* Live link */}
           {project.link && (
             <div className="flex items-center gap-1.5">
               <LinkIcon
@@ -116,7 +111,6 @@ const ProjectCard = ({ project, index }: Props) => {
             </div>
           )}
 
-          {/* Tech tags */}
           <div className="flex flex-wrap gap-1.5">
             {project.techTags.map((tech) => (
               <span
@@ -133,7 +127,6 @@ const ProjectCard = ({ project, index }: Props) => {
             ))}
           </div>
 
-          {/* Read more */}
           <div>
             <Link
               href={`/${project.id}`}
@@ -150,7 +143,6 @@ const ProjectCard = ({ project, index }: Props) => {
           </div>
         </div>
 
-        {/* Image column */}
         <div className="lg:basis-1/2 w-full">
           <Link href={`/${project.id}`} onClick={handleClick}>
             <div className="rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">

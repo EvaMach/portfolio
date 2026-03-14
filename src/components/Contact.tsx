@@ -17,7 +17,6 @@ const Contact = () => {
       className="px-5 sm:px-10 md:px-[15%] py-20 scroll-mt-24"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        {/* Left column */}
         <div
           ref={leftRef as React.RefObject<HTMLDivElement>}
           className="animate-fade-up"
@@ -45,7 +44,6 @@ const Contact = () => {
             possible.
           </p>
 
-          {/* Social links */}
           <div className="flex gap-3">
             <Link
               href="https://www.linkedin.com/in/eva-machova-frontend-developer/"
@@ -134,7 +132,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right column — form */}
         <div
           ref={rightRef as React.RefObject<HTMLDivElement>}
           className="animate-fade-up stagger-2"

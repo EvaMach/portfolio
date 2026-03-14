@@ -26,7 +26,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
@@ -51,7 +50,6 @@ const Header = () => {
             border: "1px solid var(--border-subtle)",
           }}
         >
-          {/* Logo */}
           <Link href={isHome ? "#about" : "/"} className="flex-shrink-0">
             <Image
               src="/img/logo.png"
@@ -62,9 +60,7 @@ const Header = () => {
             />
           </Link>
 
-          {/* Right side: nav links + controls */}
           <div className="flex items-center gap-2">
-            {/* Desktop nav links */}
             {isHome && (
               <ul className="hidden md:flex items-center gap-1">
                 {navLinks.map((link) => (
@@ -87,7 +83,6 @@ const Header = () => {
               </ul>
             )}
 
-            {/* Divider */}
             {isHome && (
               <div
                 className="hidden md:block w-px h-4 mx-1"
@@ -96,7 +91,6 @@ const Header = () => {
               />
             )}
 
-            {/* Theme toggle */}
             <button
               onClick={toggle}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
@@ -110,7 +104,6 @@ const Header = () => {
               {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
             </button>
 
-            {/* Mobile hamburger */}
             {isHome && (
               <button
                 className="flex items-center justify-center w-8 h-8 rounded-lg md:hidden transition-all duration-200"
@@ -130,16 +123,13 @@ const Header = () => {
         </nav>
       </header>
 
-      {/* Mobile drawer */}
       {mobileOpen && isHome && (
         <>
-          {/* Backdrop */}
           <div
             className="fixed inset-0 z-40 md:hidden"
             onClick={() => setMobileOpen(false)}
             aria-hidden="true"
           />
-          {/* Drawer */}
           <div
             className="fixed top-20 right-4 z-50 rounded-2xl p-5 flex flex-col gap-2 min-w-40 md:hidden"
             style={{

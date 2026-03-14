@@ -4,7 +4,6 @@ const BackgroundEffects = () => {
       className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden"
       aria-hidden="true"
     >
-      {/* Yellow glow — top right */}
       <div
         className="absolute rounded-full"
         style={{
@@ -19,7 +18,6 @@ const BackgroundEffects = () => {
         }}
       />
 
-      {/* Green glow — mid left */}
       <div
         className="absolute rounded-full"
         style={{
@@ -34,7 +32,6 @@ const BackgroundEffects = () => {
         }}
       />
 
-      {/* Pink glow — mid right */}
       <div
         className="absolute rounded-full"
         style={{
@@ -49,7 +46,6 @@ const BackgroundEffects = () => {
         }}
       />
 
-      {/* Yellow glow — bottom left */}
       <div
         className="absolute rounded-full"
         style={{

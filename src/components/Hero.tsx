@@ -83,7 +83,6 @@ const Hero = () => {
         </div>
 
         <div className="hero-avatar relative flex justify-center items-center">
-          {/* Glow behind avatar */}
           <div
             className="absolute rounded-full"
             style={{
@@ -95,7 +94,6 @@ const Hero = () => {
             aria-hidden="true"
           />
 
-          {/* Floating shapes */}
           <div
             className="hero-shape-1 absolute w-10 h-10 rounded-full border-2 hidden xs:block"
             style={{
@@ -127,7 +125,6 @@ const Hero = () => {
             aria-hidden="true"
           />
 
-          {/* Avatar image */}
           <div
             className="relative z-10 w-48 h-48 md:w-64 md:h-64 rounded-full p-[2px]"
             style={{
