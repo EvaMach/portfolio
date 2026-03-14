@@ -11,13 +11,13 @@
     --bg-tertiary: #1a1a24;
     --text-primary: #e8e8ed;
     --text-secondary: #9595a8;
-    --accent-primary: #a78bfa;
+    --accent-primary: #ffcf19;
     --accent-secondary: #6ee7b7;
     --accent-tertiary: #f472b6;
     --border-subtle: #1f1f2e;
-    --glow-purple: rgba(167, 139, 250, 0.15);
+    --glow-yellow: rgba(255, 207, 25, 0.12);
     --glow-green: rgba(110, 231, 183, 0.08);
-    --glow-pink: rgba(244, 114, 182, 0.1);
+    --glow-pink: rgba(244, 114, 182, 0.08);
 
     /* Legacy vars for shadcn/ui components */
     --background: var(--bg-primary);
@@ -27,7 +27,7 @@
     --primary-foreground: #0a0a0f;
     --border: 252 20% 18%;
     --input: 252 20% 18%;
-    --ring: 263 67% 76%;
+    --ring: 48 100% 56%;
     --radius: 0.5rem;
   }
 
@@ -38,11 +38,11 @@
     --bg-tertiary: #f0f0f6;
     --text-primary: #1a1a2e;
     --text-secondary: #6b6b80;
-    --accent-primary: #7c3aed;
+    --accent-primary: #c9a000;
     --accent-secondary: #059669;
     --accent-tertiary: #db2777;
     --border-subtle: #e2e2ec;
-    --glow-purple: rgba(124, 58, 237, 0.06);
+    --glow-yellow: rgba(201, 160, 0, 0.08);
     --glow-green: rgba(5, 150, 105, 0.04);
     --glow-pink: rgba(219, 39, 119, 0.05);
 
@@ -52,7 +52,7 @@
     --primary-foreground: #ffffff;
     --border: 252 20% 88%;
     --input: 252 20% 88%;
-    --ring: 263 80% 50%;
+    --ring: 48 100% 40%;
   }
 }
 
