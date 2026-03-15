@@ -36,7 +36,7 @@ const About = () => {
     <section className="px-5 sm:px-10 md:px-[15%] py-20">
       <div className="section-label">About</div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-12 mt-2">
+      <div className="gap-12 mt-2">
         <div
           ref={sectionRef as React.RefObject<HTMLDivElement>}
           className="animate-fade-up"
@@ -92,51 +92,11 @@ const About = () => {
             cool.&rdquo;
           </p>
         </div>
-
-        <div
-          ref={chipsRef as React.RefObject<HTMLDivElement>}
-          className="animate-fade-up stagger-2"
-        >
-          <p
-            className="text-xs font-semibold uppercase tracking-widest mb-4"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            What I have worked with
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill, i) => (
-              <span
-                key={skill}
-                className="animate-fade-up in-view px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 cursor-default hover:-translate-y-0.5"
-                style={{
-                  background: "var(--bg-tertiary)",
-                  border: "1px solid var(--border-subtle)",
-                  color: "var(--text-secondary)",
-                  transitionDelay: `${i * 40}ms`,
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor =
-                    "var(--accent-primary)";
-                  (e.currentTarget as HTMLElement).style.color =
-                    "var(--accent-primary)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor =
-                    "var(--border-subtle)";
-                  (e.currentTarget as HTMLElement).style.color =
-                    "var(--text-secondary)";
-                }}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
 
       <div
         ref={timelineRef as React.RefObject<HTMLDivElement>}
-        className="animate-fade-up mt-16 overflow-x-auto"
+        className="animate-fade-up mt-16"
       >
         <p
           className="text-xs font-semibold uppercase tracking-widest mb-6"
@@ -144,30 +104,32 @@ const About = () => {
         >
           My journey
         </p>
-        <div className="flex items-start gap-0 min-w-max md:min-w-0">
+        <div className="flex flex-col sm:flex-row items-start w-full">
           {timeline.map((item, i) => (
-            <div key={item.role} className="flex items-center">
-              <div className="flex flex-col items-center">
+            <div key={item.role} className="flex sm:flex-row sm:items-center sm:flex-1 sm:last:flex-none flex-col items-start w-full sm:w-auto">
+              <div className="flex sm:flex-col sm:items-center items-center gap-3 sm:gap-0">
                 <div
-                  className="w-3 h-3 rounded-full mb-3 transition-all duration-300"
+                  className="w-3 h-3 rounded-full shrink-0 sm:mb-3 transition-all duration-300"
                   style={{ background: "var(--accent-primary)" }}
                 />
-                <span
-                  className="text-sm font-semibold text-center max-w-[100px] leading-tight mb-1"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  {item.role}
-                </span>
-                <span
-                  className="text-xs"
-                  style={{ color: "var(--text-secondary)" }}
-                >
-                  {item.years}
-                </span>
+                <div className="flex sm:flex-col sm:items-center sm:text-center">
+                  <span
+                    className="text-sm font-semibold leading-tight sm:mb-1"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {item.role}
+                  </span>
+                  <span
+                    className="text-xs ml-2 sm:ml-0"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {item.years}
+                  </span>
+                </div>
               </div>
               {i < timeline.length - 1 && (
                 <div
-                  className="w-16 h-px mx-2 mt-[-24px]"
+                  className="w-px sm:w-auto sm:flex-1 h-6 sm:h-px ml-[5px] sm:ml-0 sm:mx-2 sm:mt-[-24px]"
                   style={{ background: "var(--border-subtle)" }}
                 />
               )}
