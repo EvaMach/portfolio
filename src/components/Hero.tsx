@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import myPic from "../../public/img/me.webp";
+import myPic from "../../public/img/me.png";
 
 const Hero = () => {
   return (
@@ -21,14 +21,24 @@ const Hero = () => {
             Hi, I&apos;m Eva.
           </h1>
           <h2
-            className="hero-line-2 font-extrabold mb-6"
+            className="hero-line-2 font-extrabold mb-2"
             style={{
               fontSize: "clamp(1.75rem, 4vw, 3rem)",
               lineHeight: "1.15",
             }}
           >
-            I <span className="gradient-text">build </span> things.
+            I <span className="gradient-text">build</span> things
           </h2>
+          <p
+            className="hero-line-2 font-extrabold mb-6"
+            style={{
+              color: "color-mix(in srgb, var(--text-primary) 60%, transparent)",
+              fontSize: "clamp(1.25rem, 3vw, 2rem)",
+              lineHeight: "1.15",
+            }}
+          >
+            for users to enjoy and teams to build on.
+          </p>
 
           <p
             className="hero-subtitle mb-8 max-w-lg"
@@ -38,9 +48,10 @@ const Hero = () => {
               lineHeight: "1.7",
             }}
           >
-            Started in QA with a passion for UX, fell in love with coding, and
-            never looked back. Now exploring mobile and AI-driven backends —
-            a full circle back to my linguistics roots.
+            Developer. Former linguist and QA engineer.{" "}
+            <br />
+            Frontend-first, but these days the stack goes all the way — mobile,
+            Python backends, and AI.
           </p>
 
           <div className="hero-cta flex flex-wrap gap-3">

@@ -68,17 +68,22 @@ const ProjectCard = ({ project, index }: Props) => {
               {project.year}
               {project.client && ` · ${project.client}`}
             </div>
-            <span
-              className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
-              style={{
-                background:
-                  "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
-                color: "var(--accent-primary)",
-                border: "1px solid color-mix(in srgb, var(--accent-primary) 25%, transparent)",
-              }}
-            >
-              {project.roles.split(" | ")[0]}
-            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {project.roles.split(" | ").map((role) => (
+                <span
+                  key={role}
+                  className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
+                  style={{
+                    background:
+                      "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
+                    color: "var(--accent-primary)",
+                    border: "1px solid color-mix(in srgb, var(--accent-primary) 25%, transparent)",
+                  }}
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="space-y-2">

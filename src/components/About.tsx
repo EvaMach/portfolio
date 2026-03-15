@@ -8,24 +8,23 @@ import Link from "next/link";
 const skills = [
   "React",
   "TypeScript",
-  "Next.js",
+  "React Native",
   "Python",
+  "FastAPI",
   "Tailwind CSS",
   "Cypress",
   "Figma",
   "REST API",
   "Git",
-  "UX/UI Design",
-  "Flask",
   "Ant Design",
 ];
 
 const timeline = [
-  { role: "MA Linguistics", years: "–2020" },
-  { role: "QA Engineer", years: "2019–2020" },
-  { role: "Frontend Dev", years: "2021–2024" },
-  { role: "Fullstack & Lead", years: "2023–2025" },
-  { role: "AI & Mobile", years: "2025–" },
+  { role: "MA Linguistics", years: "2020" },
+  { role: "QA Engineer", years: "2020–2022" },
+  { role: "Frontend Dev", years: "2022–2025" },
+  { role: "Dev Team Lead", years: "2024" },
+  { role: "Full-stack", years: "2025-now" },
 ];
 
 const About = () => {
@@ -50,9 +49,8 @@ const About = () => {
               lineHeight: "1.75",
             }}
           >
-            After my MA in linguistics I was drawn to tech and started in QA.
-            My passion for UX/UI led me into frontend development, and after a
-            period as{" "}
+            After an MA in linguistics, I moved into tech through QA — which
+            gave me a foundation I still rely on:{" "}
             <span
               className="font-semibold rounded px-1"
               style={{
@@ -61,11 +59,15 @@ const About = () => {
                   "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
               }}
             >
-              dev team lead
+              thinking in edge cases, questioning assumptions, caring about what
+              breaks.
             </span>{" "}
-            I deep-dived back into technology — moving into mobile and
-            AI-driven backends, circling back to my linguistic roots.
+            My passion for UX/UI then pulled me into frontend, and after leading
+            a dev team I went deeper — React Native, FastAPI, LLM-integrated
+            backends. That last part feels like a full circle. Turns out
+            designing a system prompt isn't that far from linguistics. 🙂
           </p>
+
           <p
             className="mb-5"
             style={{
@@ -85,19 +87,9 @@ const About = () => {
             >
               clean, maintainable code
             </span>{" "}
-            and like leaving things better than I found them. My goal stays
-            the same: build things that make users go &ldquo;oh, that&apos;s cool.&rdquo;
-          </p>
-          <p
-            style={{
-              color: "var(--text-primary)",
-              fontSize: "1.125rem",
-              lineHeight: "1.75",
-            }}
-          >
-            I enjoy a challenge and keep learning — through code reviews,
-            conferences, and teaching. Lately that means Python, React Native,
-            and the AI shift that&apos;s pulling everything back toward language.
+            and like leaving things better than I found them. My goal stays the
+            same: build things that make users go &ldquo;oh, that&apos;s
+            cool.&rdquo;
           </p>
         </div>
 
@@ -109,7 +101,7 @@ const About = () => {
             className="text-xs font-semibold uppercase tracking-widest mb-4"
             style={{ color: "var(--text-secondary)" }}
           >
-            What I work with
+            What I have worked with
           </p>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill, i) => (
