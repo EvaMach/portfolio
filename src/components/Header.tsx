@@ -49,6 +49,7 @@ const Header = () => {
               width={56}
               height={56}
               priority
+              sizes="56px"
             />
           </Link>
 
