@@ -1,23 +1,6 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
-import LinkedinIcon from "./ui/linkedinIcon";
-import GitHubIcon from "./ui/githubIcon";
-import Link from "next/link";
-
-const skills = [
-  "React",
-  "TypeScript",
-  "React Native",
-  "Python",
-  "FastAPI",
-  "Tailwind CSS",
-  "Cypress",
-  "Figma",
-  "REST API",
-  "Git",
-  "Ant Design",
-];
 
 const timeline = [
   { role: "MA Linguistics", years: "2020" },
@@ -29,7 +12,6 @@ const timeline = [
 
 const About = () => {
   const sectionRef = useInView();
-  const chipsRef = useInView();
   const timelineRef = useInView();
 
   return (
@@ -65,7 +47,7 @@ const About = () => {
             My passion for UX/UI then pulled me into frontend, and after leading
             a dev team I went deeper — React Native, FastAPI, LLM-integrated
             backends. That last part feels like a full circle. Turns out
-            designing a system prompt isn't that far from linguistics. 🙂
+            designing a system prompt isn&apos;t that far from linguistics. 🙂
           </p>
 
           <p
