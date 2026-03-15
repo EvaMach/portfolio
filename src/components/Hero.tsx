@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import myPic from "../../public/img/me.webp";
+import myPic from "../../public/img/me.png";
 
 const Hero = () => {
   return (
@@ -10,36 +10,36 @@ const Hero = () => {
       className="relative min-h-[80vh] flex items-center px-5 sm:px-10 md:px-[15%] py-16"
     >
       <div className="w-full grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-12 items-center">
-        {/* Left column — text */}
         <div>
-          {/* Badge */}
-          <span
-            className="hero-badge inline-block px-4 py-1.5 rounded-full text-xs font-semibold mb-6 tracking-wider uppercase"
-            style={{
-              border: "1px solid var(--accent-primary)",
-              color: "var(--accent-primary)",
-              background: "color-mix(in srgb, var(--accent-primary) 8%, transparent)",
-            }}
-          >
-            Frontend Developer
-          </span>
-
-          {/* Headline */}
           <h1
             className="hero-line-1 font-extrabold mb-2 leading-tight"
-            style={{ color: "var(--text-primary)", fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+            style={{
+              color: "var(--text-primary)",
+              fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            }}
           >
             Hi, I&apos;m Eva.
           </h1>
           <h2
-            className="hero-line-2 font-extrabold mb-6"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: "1.15" }}
+            className="hero-line-2 font-extrabold mb-2"
+            style={{
+              fontSize: "clamp(1.75rem, 4vw, 3rem)",
+              lineHeight: "1.15",
+            }}
           >
-            I build{" "}
-            <span className="gradient-text">digital products.</span>
+            I <span className="gradient-text">build</span> things
           </h2>
+          <p
+            className="hero-line-2 font-extrabold mb-6"
+            style={{
+              color: "color-mix(in srgb, var(--text-primary) 60%, transparent)",
+              fontSize: "clamp(1.25rem, 3vw, 2rem)",
+              lineHeight: "1.15",
+            }}
+          >
+            for users to enjoy and teams to build on.
+          </p>
 
-          {/* Subtitle */}
           <p
             className="hero-subtitle mb-8 max-w-lg"
             style={{
@@ -48,12 +48,12 @@ const Hero = () => {
               lineHeight: "1.7",
             }}
           >
-            Frontend developer with a background in QA and UX/UI design. I care
-            about clean code, great user experience, and leaving things better
-            than I found them.
+            Developer. Former linguist and QA engineer.{" "}
+            <br />
+            Frontend-first, but these days the stack goes all the way — mobile,
+            Python backends, and AI.
           </p>
 
-          {/* CTAs */}
           <div className="hero-cta flex flex-wrap gap-3">
             <a
               href="#work"
@@ -61,7 +61,8 @@ const Hero = () => {
               style={{
                 background: "var(--accent-primary)",
                 color: "var(--bg-primary)",
-                boxShadow: "0 0 20px color-mix(in srgb, var(--accent-primary) 30%, transparent)",
+                boxShadow:
+                  "0 0 20px color-mix(in srgb, var(--accent-primary) 30%, transparent)",
               }}
             >
               View my work ↓
@@ -75,12 +76,16 @@ const Hero = () => {
                 background: "transparent",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--accent-primary)";
-                (e.currentTarget as HTMLElement).style.color = "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--accent-primary)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-subtle)";
-                (e.currentTarget as HTMLElement).style.color = "var(--text-primary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--border-subtle)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--text-primary)";
               }}
             >
               Get in touch
@@ -88,59 +93,53 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right column — avatar + decorative shapes */}
         <div className="hero-avatar relative flex justify-center items-center">
-          {/* Glow behind avatar */}
           <div
-            className="absolute inset-0 rounded-full"
+            className="absolute rounded-full"
             style={{
-              background: "var(--glow-purple)",
-              filter: "blur(60px)",
-              transform: "scale(1.2)",
+              inset: "-20%",
+              background:
+                "radial-gradient(ellipse at center, var(--glow-yellow) 0%, transparent 70%)",
+              filter: "blur(40px)",
             }}
             aria-hidden="true"
           />
 
-          {/* Floating shapes */}
           <div
-            className="hero-shape-1 absolute w-10 h-10 rounded-full border-2 hidden xs:block"
+            className="hero-shape-1 absolute z-20 w-14 h-14 rounded-full hidden xs:block"
             style={{
-              borderColor: "var(--accent-primary)",
-              top: "5%",
-              right: "10%",
+              background:
+                "radial-gradient(circle at 40% 35%, var(--accent-primary) 0%, var(--accent-primary) 40%, transparent 100%)",
+              bottom: "22%",
+              right: "2%",
+              opacity: 0.9,
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="hero-shape-2 absolute w-8 h-8 rounded-lg rotate-45 hidden xs:block"
+            style={{
+              background:
+                "radial-gradient(circle at 35% 35%, var(--accent-tertiary) 0%, var(--accent-tertiary) 35%, transparent 100%)",
+              bottom: "15%",
+              left: "5%",
+              opacity: 0.85,
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="hero-shape-3 absolute w-10 h-10 rounded-full hidden xs:block"
+            style={{
+              background:
+                "radial-gradient(circle at 40% 35%, var(--accent-secondary) 0%, var(--accent-secondary) 35%, transparent 100%)",
+              top: "15%",
+              left: "8%",
               opacity: 0.7,
             }}
             aria-hidden="true"
           />
-          <div
-            className="hero-shape-2 absolute w-6 h-6 rounded-sm rotate-45 hidden xs:block"
-            style={{
-              background: "var(--accent-tertiary)",
-              bottom: "15%",
-              left: "5%",
-              opacity: 0.6,
-            }}
-            aria-hidden="true"
-          />
-          <div
-            className="hero-shape-3 absolute w-8 h-8 rounded-full hidden xs:block"
-            style={{
-              background: "var(--accent-secondary)",
-              top: "15%",
-              left: "8%",
-              opacity: 0.4,
-            }}
-            aria-hidden="true"
-          />
 
-          {/* Avatar image */}
-          <div
-            className="relative z-10 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden"
-            style={{
-              outline: "2px solid var(--border-subtle)",
-              outlineOffset: "4px",
-            }}
-          >
+          <div className="relative z-10 w-48 h-48 md:w-64 md:h-64 overflow-hidden">
             <Image
               src={myPic}
               alt="Eva Machová — frontend developer"

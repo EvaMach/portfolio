@@ -6,7 +6,7 @@
   /* Dark mode (default) */
   :root,
   .dark {
-    --bg-primary: #0a0a0f;
+    --bg-primary: #0e0e14;
     --bg-secondary: #111118;
     --bg-tertiary: #1a1a24;
     --text-primary: #e8e8ed;
@@ -70,13 +70,13 @@ html {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   a {
     @apply transition-colors duration-200;
   }
 
-  /* Skip to content */
   .skip-to-content {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg;
     background: var(--accent-primary);
@@ -84,9 +84,6 @@ html {
   }
 }
 
-/* =============================
-   ENTRANCE ANIMATION UTILITIES
-   ============================= */
 .animate-fade-up {
   opacity: 0;
   transform: translateY(24px);
@@ -119,7 +116,6 @@ html {
   transform: scale(1);
 }
 
-/* Stagger delays for child elements */
 .stagger-1 { transition-delay: 100ms; }
 .stagger-2 { transition-delay: 200ms; }
 .stagger-3 { transition-delay: 300ms; }
@@ -127,9 +123,6 @@ html {
 .stagger-5 { transition-delay: 500ms; }
 .stagger-6 { transition-delay: 600ms; }
 
-/* =============================
-   AMBIENT KEYFRAME ANIMATIONS
-   ============================= */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-12px) rotate(3deg); }
@@ -174,9 +167,6 @@ html {
 .hero-shape-2  { animation: float-reverse 9s ease-in-out 900ms infinite; }
 .hero-shape-3  { animation: float 11s ease-in-out 1100ms infinite; }
 
-/* =============================
-   GRADIENT TEXT UTILITY
-   ============================= */
 .gradient-text {
   background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
@@ -184,9 +174,6 @@ html {
   background-clip: text;
 }
 
-/* =============================
-   SECTION LABEL UTILITY
-   ============================= */
 .section-label {
   display: inline-flex;
   align-items: center;
@@ -207,9 +194,25 @@ html {
   border-radius: 1px;
 }
 
-/* =============================
-   REDUCED MOTION
-   ============================= */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: none;
+    z-index: 1;
+  }
+  ::view-transition-new(root) {
+    z-index: 2;
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+    mask-size: 100% 140vh;
+    mask-repeat: no-repeat;
+    animation: theme-sweep 1.2s cubic-bezier(0.25, 0, 0.1, 1) both;
+  }
+}
+
+@keyframes theme-sweep {
+  from { mask-position: 0 -140vh; }
+  to   { mask-position: 0 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up,
   .animate-fade-in,
@@ -223,5 +226,11 @@ html {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }

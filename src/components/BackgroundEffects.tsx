@@ -4,7 +4,6 @@ const BackgroundEffects = () => {
       className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden"
       aria-hidden="true"
     >
-      {/* Yellow glow — top right */}
       <div
         className="absolute rounded-full"
         style={{
@@ -12,14 +11,14 @@ const BackgroundEffects = () => {
           height: "480px",
           top: "-80px",
           right: "-100px",
-          background: "var(--glow-yellow)",
+          background:
+            "radial-gradient(circle at 40% 40%, rgba(255,207,25,0.22) 0%, rgba(255,160,50,0.12) 50%, transparent 80%)",
           filter: "blur(90px)",
           animation: "drift 22s ease-in-out infinite",
           willChange: "transform",
         }}
       />
 
-      {/* Green glow — mid left */}
       <div
         className="absolute rounded-full"
         style={{
@@ -27,14 +26,14 @@ const BackgroundEffects = () => {
           height: "360px",
           top: "30%",
           left: "-80px",
-          background: "var(--glow-green)",
+          background:
+            "radial-gradient(circle at 55% 45%, rgba(110,231,183,0.18) 0%, rgba(52,211,153,0.09) 50%, transparent 80%)",
           filter: "blur(80px)",
           animation: "drift 28s ease-in-out infinite 4s",
           willChange: "transform",
         }}
       />
 
-      {/* Pink glow — mid right */}
       <div
         className="absolute rounded-full"
         style={{
@@ -42,14 +41,14 @@ const BackgroundEffects = () => {
           height: "300px",
           top: "50%",
           right: "5%",
-          background: "var(--glow-pink)",
+          background:
+            "radial-gradient(circle at 50% 50%, rgba(244,114,182,0.18) 0%, rgba(192,38,211,0.09) 55%, transparent 80%)",
           filter: "blur(80px)",
           animation: "drift 32s ease-in-out infinite 8s",
           willChange: "transform",
         }}
       />
 
-      {/* Yellow glow — bottom left */}
       <div
         className="absolute rounded-full"
         style={{
@@ -57,7 +56,8 @@ const BackgroundEffects = () => {
           height: "400px",
           bottom: "5%",
           left: "10%",
-          background: "var(--glow-yellow)",
+          background:
+            "radial-gradient(circle at 45% 55%, rgba(255,207,25,0.18) 0%, rgba(250,170,30,0.08) 55%, transparent 80%)",
           filter: "blur(100px)",
           animation: "glow-pulse 5s ease-in-out infinite",
           willChange: "transform, opacity",

@@ -26,7 +26,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
@@ -37,12 +36,10 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 flex justify-center px-4 py-4">
+      <header className="sticky top-0 z-50 px-5 sm:px-10 md:px-[15%] py-4">
         <nav
-          className={`flex items-center gap-6 px-5 py-3 rounded-2xl transition-all duration-300 ${
-            isScrolled
-              ? "shadow-lg shadow-black/20"
-              : ""
+          className={`flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-300 w-full ${
+            isScrolled ? "shadow-lg shadow-black/20" : ""
           }`}
           style={{
             background: isScrolled
@@ -53,10 +50,9 @@ const Header = () => {
             border: "1px solid var(--border-subtle)",
           }}
         >
-          {/* Logo */}
           <Link href={isHome ? "#about" : "/"} className="flex-shrink-0">
             <Image
-              src="/img/logo.png"
+              src={theme === "dark" ? "/img/logo-dark.png" : "/img/logo-light.png"}
               alt="Eva Machová logo"
               width={56}
               height={56}
@@ -64,76 +60,76 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop nav links */}
-          {isHome && (
-            <ul className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-[1.03]"
-                    style={{ color: "var(--text-secondary)" }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "var(--accent-primary)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "var(--text-secondary)")
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {/* Theme toggle */}
-          <button
-            onClick={toggle}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 hover:scale-110"
-            style={{
-              color: "var(--text-secondary)",
-              background: "var(--bg-tertiary)",
-              border: "1px solid var(--border-subtle)",
-            }}
-          >
-            {theme === "dark" ? (
-              <Sun size={15} />
-            ) : (
-              <Moon size={15} />
+          <div className="flex items-center gap-2">
+            {isHome && (
+              <ul className="hidden md:flex items-center gap-1">
+                {navLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:scale-[1.03]"
+                      style={{ color: "var(--text-secondary)" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "var(--accent-primary)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "var(--text-secondary)")
+                      }
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             )}
-          </button>
 
-          {/* Mobile hamburger */}
-          {isHome && (
+            {isHome && (
+              <div
+                className="hidden md:block w-px h-4 mx-1"
+                style={{ background: "var(--border-subtle)" }}
+                aria-hidden="true"
+              />
+            )}
+
             <button
-              className="flex items-center justify-center w-8 h-8 rounded-lg md:hidden transition-all duration-200"
+              onClick={toggle}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 hover:scale-110 active:scale-90"
               style={{
                 color: "var(--text-secondary)",
                 background: "var(--bg-tertiary)",
                 border: "1px solid var(--border-subtle)",
               }}
-              onClick={() => setMobileOpen((v) => !v)}
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileOpen}
             >
-              {mobileOpen ? <X size={15} /> : <Menu size={15} />}
+              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
             </button>
-          )}
+
+            {isHome && (
+              <button
+                className="flex items-center justify-center w-8 h-8 rounded-lg md:hidden transition-all duration-200"
+                style={{
+                  color: "var(--text-secondary)",
+                  background: "var(--bg-tertiary)",
+                  border: "1px solid var(--border-subtle)",
+                }}
+                onClick={() => setMobileOpen((v) => !v)}
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? <X size={15} /> : <Menu size={15} />}
+              </button>
+            )}
+          </div>
         </nav>
       </header>
 
-      {/* Mobile drawer */}
       {mobileOpen && isHome && (
         <>
-          {/* Backdrop */}
           <div
             className="fixed inset-0 z-40 md:hidden"
             onClick={() => setMobileOpen(false)}
             aria-hidden="true"
           />
-          {/* Drawer */}
           <div
             className="fixed top-20 right-4 z-50 rounded-2xl p-5 flex flex-col gap-2 min-w-40 md:hidden"
             style={{

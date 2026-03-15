@@ -6,17 +6,25 @@ import GitHubIcon from "./ui/githubIcon";
 import Link from "next/link";
 
 const skills = [
-  "React", "TypeScript", "Next.js", "Python",
-  "Tailwind CSS", "Cypress", "Figma", "REST API",
-  "Git", "UX/UI Design", "Flask", "Ant Design",
+  "React",
+  "TypeScript",
+  "React Native",
+  "Python",
+  "FastAPI",
+  "Tailwind CSS",
+  "Cypress",
+  "Figma",
+  "REST API",
+  "Git",
+  "Ant Design",
 ];
 
 const timeline = [
-  { role: "QA Engineer", years: "2019–2020" },
-  { role: "UX/UI Designer", years: "2020–2021" },
-  { role: "Frontend Dev", years: "2021–2024" },
-  { role: "Dev Team Lead", years: "2023" },
-  { role: "Fullstack Dev", years: "2024–2025" },
+  { role: "MA Linguistics", years: "2020" },
+  { role: "QA Engineer", years: "2020–2022" },
+  { role: "Frontend Dev", years: "2022–2025" },
+  { role: "Dev Team Lead", years: "2024" },
+  { role: "Full-stack", years: "2025-now" },
 ];
 
 const About = () => {
@@ -26,146 +34,102 @@ const About = () => {
 
   return (
     <section className="px-5 sm:px-10 md:px-[15%] py-20">
-      {/* Section label */}
       <div className="section-label">About</div>
 
-      {/* Two-column layout */}
-      <div className="grid grid-cols-1 md:grid-cols-[55%_45%] gap-12 mt-2">
-        {/* Bio */}
+      <div className="gap-12 mt-2">
         <div
           ref={sectionRef as React.RefObject<HTMLDivElement>}
           className="animate-fade-up"
         >
-          <p className="mb-5" style={{ color: "var(--text-primary)", fontSize: "1.125rem", lineHeight: "1.75" }}>
-            My tech journey has taken me from testing (manual and automated),
-            through UX/UI design, to frontend development with a period in a{" "}
+          <p
+            className="mb-5"
+            style={{
+              color: "var(--text-primary)",
+              fontSize: "1.125rem",
+              lineHeight: "1.75",
+            }}
+          >
+            After an MA in linguistics, I moved into tech through QA — which
+            gave me a foundation I still rely on:{" "}
             <span
               className="font-semibold rounded px-1"
               style={{
                 color: "var(--accent-primary)",
-                background: "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
+                background:
+                  "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
               }}
             >
-              dev team lead
+              thinking in edge cases, questioning assumptions, caring about what
+              breaks.
             </span>{" "}
-            role along the way.
+            My passion for UX/UI then pulled me into frontend, and after leading
+            a dev team I went deeper — React Native, FastAPI, LLM-integrated
+            backends. That last part feels like a full circle. Turns out
+            designing a system prompt isn't that far from linguistics. 🙂
           </p>
-          <p className="mb-5" style={{ color: "var(--text-primary)", fontSize: "1.125rem", lineHeight: "1.75" }}>
-            In my daily work, I care about{" "}
+
+          <p
+            className="mb-5"
+            style={{
+              color: "var(--text-primary)",
+              fontSize: "1.125rem",
+              lineHeight: "1.75",
+            }}
+          >
+            I care about{" "}
             <span
               className="font-semibold rounded px-1"
               style={{
                 color: "var(--accent-secondary)",
-                background: "color-mix(in srgb, var(--accent-secondary) 10%, transparent)",
+                background:
+                  "color-mix(in srgb, var(--accent-secondary) 10%, transparent)",
               }}
             >
               clean, maintainable code
             </span>{" "}
-            and like leaving things better than I found them. I enjoy
-            collaborating, reviewing code, and exploring new technologies —
-            lately Python and React Native.
+            and like leaving things better than I found them. My goal stays the
+            same: build things that make users go &ldquo;oh, that&apos;s
+            cool.&rdquo;
           </p>
-          <p style={{ color: "var(--text-primary)", fontSize: "1.125rem", lineHeight: "1.75" }}>
-            Over the past few years, I&apos;ve worked with teams on a range of
-            projects, always focusing on usability, performance, and great user{" "}
-            <em>and</em> developer experience.
-          </p>
-
-          {/* Social links */}
-          <div className="flex gap-3 mt-8">
-            <Link
-              href="https://www.linkedin.com/in/eva-machova-frontend-developer/"
-              aria-label="LinkedIn profile"
-              className="flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200 hover:scale-110"
-              style={{
-                background: "var(--bg-tertiary)",
-                border: "1px solid var(--border-subtle)",
-                color: "var(--text-secondary)",
-              }}
-            >
-              <LinkedinIcon className="w-5 h-5 fill-current" />
-            </Link>
-            <Link
-              href="https://github.com/EvaMach"
-              aria-label="GitHub profile"
-              className="flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200 hover:scale-110"
-              style={{
-                background: "var(--bg-tertiary)",
-                border: "1px solid var(--border-subtle)",
-                color: "var(--text-secondary)",
-              }}
-            >
-              <GitHubIcon className="fill-current w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Skill chips */}
-        <div
-          ref={chipsRef as React.RefObject<HTMLDivElement>}
-          className="animate-fade-up stagger-2"
-        >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--text-secondary)" }}>
-            What I work with
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill, i) => (
-              <span
-                key={skill}
-                className="animate-fade-up in-view px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 cursor-default hover:-translate-y-0.5"
-                style={{
-                  background: "var(--bg-tertiary)",
-                  border: "1px solid var(--border-subtle)",
-                  color: "var(--text-secondary)",
-                  transitionDelay: `${i * 40}ms`,
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--accent-primary)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--accent-primary)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--border-subtle)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)";
-                }}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
 
-      {/* Timeline */}
       <div
         ref={timelineRef as React.RefObject<HTMLDivElement>}
-        className="animate-fade-up mt-16 overflow-x-auto"
+        className="animate-fade-up mt-16"
       >
-        <p className="text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "var(--text-secondary)" }}>
+        <p
+          className="text-xs font-semibold uppercase tracking-widest mb-6"
+          style={{ color: "var(--text-secondary)" }}
+        >
           My journey
         </p>
-        <div className="flex items-start gap-0 min-w-max md:min-w-0">
+        <div className="flex flex-col sm:flex-row items-start w-full">
           {timeline.map((item, i) => (
-            <div key={item.role} className="flex items-center">
-              {/* Node */}
-              <div className="flex flex-col items-center">
+            <div key={item.role} className="flex sm:flex-row sm:items-center sm:flex-1 sm:last:flex-none flex-col items-start w-full sm:w-auto">
+              <div className="flex sm:flex-col sm:items-center items-center gap-3 sm:gap-0">
                 <div
-                  className="w-3 h-3 rounded-full mb-3 transition-all duration-300"
+                  className="w-3 h-3 rounded-full shrink-0 sm:mb-3 transition-all duration-300"
                   style={{ background: "var(--accent-primary)" }}
                 />
-                <span
-                  className="text-sm font-semibold text-center max-w-[100px] leading-tight mb-1"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  {item.role}
-                </span>
-                <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
-                  {item.years}
-                </span>
+                <div className="flex sm:flex-col sm:items-center sm:text-center">
+                  <span
+                    className="text-sm font-semibold leading-tight sm:mb-1"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {item.role}
+                  </span>
+                  <span
+                    className="text-xs ml-2 sm:ml-0"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {item.years}
+                  </span>
+                </div>
               </div>
-              {/* Connector line */}
               {i < timeline.length - 1 && (
                 <div
-                  className="w-16 h-px mx-2 mt-[-24px]"
+                  className="w-px sm:w-auto sm:flex-1 h-6 sm:h-px ml-[5px] sm:ml-0 sm:mx-2 sm:mt-[-24px]"
                   style={{ background: "var(--border-subtle)" }}
                 />
               )}

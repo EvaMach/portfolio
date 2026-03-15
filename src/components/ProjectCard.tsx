@@ -48,23 +48,12 @@ const ProjectCard = ({ project, index }: Props) => {
         (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 transparent";
       }}
     >
-      {/* Project number — decorative */}
-      <span
-        className="absolute top-5 right-6 text-5xl font-extrabold select-none pointer-events-none"
-        style={{ color: "var(--accent-secondary)", opacity: 0.12 }}
-        aria-hidden="true"
-      >
-        /{String(index + 1).padStart(2, "0")}
-      </span>
-
       <div
         className={`flex flex-col ${
           imageRight ? "lg:flex-row" : "lg:flex-row-reverse"
         } gap-8 items-start`}
       >
-        {/* Text column */}
         <div className="flex flex-col gap-4 lg:basis-1/2 z-10">
-          {/* Header */}
           <div>
             <h3
               className="font-bold text-2xl mb-1"
@@ -79,21 +68,24 @@ const ProjectCard = ({ project, index }: Props) => {
               {project.year}
               {project.client && ` · ${project.client}`}
             </div>
-            {/* Role badge */}
-            <span
-              className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
-              style={{
-                background:
-                  "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
-                color: "var(--accent-primary)",
-                border: "1px solid color-mix(in srgb, var(--accent-primary) 25%, transparent)",
-              }}
-            >
-              {project.roles.split(" | ")[0]}
-            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {project.roles.split(" | ").map((role) => (
+                <span
+                  key={role}
+                  className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
+                  style={{
+                    background:
+                      "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
+                    color: "var(--accent-primary)",
+                    border: "1px solid color-mix(in srgb, var(--accent-primary) 25%, transparent)",
+                  }}
+                >
+                  {role}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* Description */}
           <div className="space-y-2">
             {project.shortDescription.map((paragraph, i) => (
               <p
@@ -106,7 +98,6 @@ const ProjectCard = ({ project, index }: Props) => {
             ))}
           </div>
 
-          {/* Live link */}
           {project.link && (
             <div className="flex items-center gap-1.5">
               <LinkIcon
@@ -125,7 +116,6 @@ const ProjectCard = ({ project, index }: Props) => {
             </div>
           )}
 
-          {/* Tech tags */}
           <div className="flex flex-wrap gap-1.5">
             {project.techTags.map((tech) => (
               <span
@@ -142,7 +132,6 @@ const ProjectCard = ({ project, index }: Props) => {
             ))}
           </div>
 
-          {/* Read more */}
           <div>
             <Link
               href={`/${project.id}`}
@@ -159,10 +148,9 @@ const ProjectCard = ({ project, index }: Props) => {
           </div>
         </div>
 
-        {/* Image column */}
         <div className="lg:basis-1/2 w-full">
           <Link href={`/${project.id}`} onClick={handleClick}>
-            <div className="rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+            <div className="rounded-xl overflow-hidden">
               <Image
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full rounded-xl"

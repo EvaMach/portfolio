@@ -17,7 +17,6 @@ const Contact = () => {
       className="px-5 sm:px-10 md:px-[15%] py-20 scroll-mt-24"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        {/* Left column */}
         <div
           ref={leftRef as React.RefObject<HTMLDivElement>}
           className="animate-fade-up"
@@ -34,14 +33,17 @@ const Contact = () => {
           </h2>
           <p
             className="mb-8"
-            style={{ color: "var(--text-secondary)", fontSize: "1.05rem", lineHeight: "1.7" }}
+            style={{
+              color: "var(--text-secondary)",
+              fontSize: "1.05rem",
+              lineHeight: "1.7",
+            }}
           >
-            Have a project in mind or just want to say hi? I&apos;m always happy to
-            chat. Send me a message and I&apos;ll get back to you as soon as
+            Have a project in mind or just want to say hi? I&apos;m always happy
+            to chat. Send me a message and I&apos;ll get back to you as soon as
             possible.
           </p>
 
-          {/* Social links */}
           <div className="flex gap-3">
             <Link
               href="https://www.linkedin.com/in/eva-machova-frontend-developer/"
@@ -53,14 +55,20 @@ const Contact = () => {
                 color: "var(--text-secondary)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--accent-primary)";
-                (e.currentTarget as HTMLElement).style.color = "var(--bg-primary)";
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.background =
+                  "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--bg-primary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--accent-primary)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--bg-tertiary)";
-                (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)";
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-subtle)";
+                (e.currentTarget as HTMLElement).style.background =
+                  "var(--bg-tertiary)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--text-secondary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--border-subtle)";
               }}
             >
               <LinkedinIcon className="w-5 h-5 fill-current" />
@@ -75,14 +83,20 @@ const Contact = () => {
                 color: "var(--text-secondary)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--accent-primary)";
-                (e.currentTarget as HTMLElement).style.color = "var(--bg-primary)";
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.background =
+                  "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--bg-primary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--accent-primary)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--bg-tertiary)";
-                (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)";
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-subtle)";
+                (e.currentTarget as HTMLElement).style.background =
+                  "var(--bg-tertiary)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--text-secondary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--border-subtle)";
               }}
             >
               <GitHubIcon className="fill-current w-5 h-5" />
@@ -97,33 +111,27 @@ const Contact = () => {
                 color: "var(--text-secondary)",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--accent-primary)";
-                (e.currentTarget as HTMLElement).style.color = "var(--bg-primary)";
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.background =
+                  "var(--accent-primary)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--bg-primary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--accent-primary)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "var(--bg-tertiary)";
-                (e.currentTarget as HTMLElement).style.color = "var(--text-secondary)";
-                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-subtle)";
+                (e.currentTarget as HTMLElement).style.background =
+                  "var(--bg-tertiary)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--text-secondary)";
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--border-subtle)";
               }}
             >
               <Mail size={18} />
             </Link>
           </div>
-
-          <p className="mt-6 text-sm" style={{ color: "var(--text-secondary)" }}>
-            Or email me directly at{" "}
-            <Link
-              href="mailto:evca.machova@gmail.com"
-              className="hover:underline underline-offset-2"
-              style={{ color: "var(--accent-primary)" }}
-            >
-              evca.machova@gmail.com
-            </Link>
-          </p>
         </div>
 
-        {/* Right column — form */}
         <div
           ref={rightRef as React.RefObject<HTMLDivElement>}
           className="animate-fade-up stagger-2"
