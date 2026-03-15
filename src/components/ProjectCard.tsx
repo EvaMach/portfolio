@@ -48,7 +48,7 @@ const ProjectCard = ({ project, index }: Props) => {
         (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 transparent";
       }}
     >
-<div
+      <div
         className={`flex flex-col ${
           imageRight ? "lg:flex-row" : "lg:flex-row-reverse"
         } gap-8 items-start`}

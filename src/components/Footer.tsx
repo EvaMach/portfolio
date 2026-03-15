@@ -8,7 +8,7 @@ const Footer = () => {
         fontSize: "0.875rem",
       }}
     >
-      <span>©2026 Eva Machová</span>
+      <span>&copy;2026 Eva Machov&aacute;</span>
     </footer>
   );
 };

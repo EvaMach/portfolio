@@ -163,7 +163,7 @@ const ContactForm = () => {
             "0 0 20px color-mix(in srgb, var(--accent-primary) 25%, transparent)",
         }}
       >
-        {form.formState.isSubmitting ? "Sending…" : "Send message"}
+        {form.formState.isSubmitting ? "Sending\u2026" : "Send message"}
       </button>
     </form>
   );
