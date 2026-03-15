@@ -1,11 +1,25 @@
 "use client";
 
 import { useInView } from "@/hooks/useInView";
-import LinkedinIcon from "./ui/linkedinIcon";
-import GitHubIcon from "./ui/githubIcon";
-import Link from "next/link";
 import { Mail } from "lucide-react";
 import ContactForm from "./ContactForm";
+import SocialIconLink from "./ui/socialIconLink";
+import LinkedinIcon from "./ui/linkedinIcon";
+import GitHubIcon from "./ui/githubIcon";
+import { contactContent } from "@/lib/content";
+import { ComponentType } from "react";
+
+const iconMap: Record<string, ComponentType<{ className?: string }>> = {
+  linkedin: LinkedinIcon,
+  github: GitHubIcon,
+  email: Mail as ComponentType<{ className?: string }>,
+};
+
+const iconClassMap: Record<string, string> = {
+  linkedin: "w-5 h-5 fill-current",
+  github: "fill-current w-5 h-5",
+  email: "w-[18px] h-[18px]",
+};
 
 const Contact = () => {
   const leftRef = useInView();
@@ -21,114 +35,24 @@ const Contact = () => {
           ref={leftRef as React.RefObject<HTMLDivElement>}
           className="animate-fade-up"
         >
-          <div className="section-label">Get in touch</div>
-          <h2
-            className="font-extrabold mb-4"
-            style={{
-              color: "var(--text-primary)",
-              fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
-            }}
-          >
-            Let&apos;s work together.
+          <div className="section-label">{contactContent.sectionLabel}</div>
+          <h2 className="font-extrabold mb-4 text-text-primary text-[clamp(1.75rem,3vw,2.5rem)]">
+            {contactContent.heading}
           </h2>
-          <p
-            className="mb-8"
-            style={{
-              color: "var(--text-secondary)",
-              fontSize: "1.05rem",
-              lineHeight: "1.7",
-            }}
-          >
-            Have a project in mind or just want to say hi? I&apos;m always happy
-            to chat. Send me a message and I&apos;ll get back to you as soon as
-            possible.
+          <p className="mb-8 text-text-secondary text-[1.05rem] leading-[1.7]">
+            {contactContent.description}
           </p>
 
           <div className="flex gap-3">
-            <Link
-              href="https://www.linkedin.com/in/eva-machova-frontend-developer/"
-              aria-label="LinkedIn"
-              className="flex items-center justify-center w-11 h-11 rounded-xl transition-all duration-200 hover:scale-110"
-              style={{
-                background: "var(--bg-tertiary)",
-                border: "1px solid var(--border-subtle)",
-                color: "var(--text-secondary)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--accent-primary)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--bg-primary)";
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--accent-primary)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--bg-tertiary)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--text-secondary)";
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--border-subtle)";
-              }}
-            >
-              <LinkedinIcon className="w-5 h-5 fill-current" />
-            </Link>
-            <Link
-              href="https://github.com/EvaMach"
-              aria-label="GitHub"
-              className="flex items-center justify-center w-11 h-11 rounded-xl transition-all duration-200 hover:scale-110"
-              style={{
-                background: "var(--bg-tertiary)",
-                border: "1px solid var(--border-subtle)",
-                color: "var(--text-secondary)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--accent-primary)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--bg-primary)";
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--accent-primary)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--bg-tertiary)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--text-secondary)";
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--border-subtle)";
-              }}
-            >
-              <GitHubIcon className="fill-current w-5 h-5" />
-            </Link>
-            <Link
-              href="mailto:evca.machova@gmail.com"
-              aria-label="Email"
-              className="flex items-center justify-center w-11 h-11 rounded-xl transition-all duration-200 hover:scale-110"
-              style={{
-                background: "var(--bg-tertiary)",
-                border: "1px solid var(--border-subtle)",
-                color: "var(--text-secondary)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--accent-primary)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--bg-primary)";
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--accent-primary)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--bg-tertiary)";
-                (e.currentTarget as HTMLElement).style.color =
-                  "var(--text-secondary)";
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--border-subtle)";
-              }}
-            >
-              <Mail size={18} />
-            </Link>
+            {contactContent.socialLinks.map((link) => (
+              <SocialIconLink
+                key={link.label}
+                href={link.href}
+                label={link.label}
+                icon={iconMap[link.iconType]}
+                iconClassName={iconClassMap[link.iconType]}
+              />
+            ))}
           </div>
         </div>
 

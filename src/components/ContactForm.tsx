@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { send } from "@/lib/email";
 import { useState } from "react";
+import FormField from "./ui/formField";
 
 export interface FormValues {
   name: string;
@@ -25,7 +26,7 @@ const formSchema = z.object({
   }),
 });
 
-const fieldStyle = {
+const baseFieldStyle = {
   background: "transparent",
   borderBottom: "2px solid var(--border-subtle)",
   color: "var(--text-primary)",
@@ -34,6 +35,16 @@ const fieldStyle = {
   padding: "0.5rem 0",
   fontSize: "0.95rem",
   transition: "border-color 0.2s",
+};
+
+const getFieldBorderColor = (
+  fieldName: string,
+  focusedField: string | null,
+  hasError: boolean
+) => {
+  if (focusedField === fieldName) return "var(--accent-primary)";
+  if (hasError) return "var(--destructive)";
+  return "var(--border-subtle)";
 };
 
 const ContactForm = () => {
@@ -64,7 +75,7 @@ const ContactForm = () => {
     }
   };
 
-  const fields = [
+  const textFields = [
     { name: "name" as const, label: "Your name", type: "text" },
     { name: "email" as const, label: "Email address", type: "email" },
   ];
@@ -75,90 +86,63 @@ const ContactForm = () => {
       className="flex flex-col gap-7"
       noValidate
     >
-      {fields.map(({ name, label, type }) => (
-        <div key={name}>
-          <label
-            htmlFor={name}
-            className="block text-xs font-semibold uppercase tracking-widest mb-2"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            {label}
-          </label>
+      {textFields.map(({ name, label, type }) => (
+        <FormField
+          key={name}
+          id={name}
+          label={label}
+          error={form.formState.errors[name]}
+        >
           <input
             id={name}
             type={type}
             {...form.register(name)}
             style={{
-              ...fieldStyle,
-              borderBottomColor:
-                focusedField === name
-                  ? "var(--accent-primary)"
-                  : form.formState.errors[name]
-                  ? "var(--destructive)"
-                  : "var(--border-subtle)",
+              ...baseFieldStyle,
+              borderBottomColor: getFieldBorderColor(
+                name,
+                focusedField,
+                !!form.formState.errors[name]
+              ),
             }}
             onFocus={() => setFocusedField(name)}
             onBlur={() => setFocusedField(null)}
             aria-describedby={`${name}-error`}
             aria-invalid={!!form.formState.errors[name]}
           />
-          {form.formState.errors[name] && (
-            <p
-              id={`${name}-error`}
-              className="mt-1.5 text-xs"
-              style={{ color: "var(--destructive)" }}
-            >
-              {form.formState.errors[name]?.message}
-            </p>
-          )}
-        </div>
+        </FormField>
       ))}
 
-      <div>
-        <label
-          htmlFor="message"
-          className="block text-xs font-semibold uppercase tracking-widest mb-2"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          Message
-        </label>
+      <FormField
+        id="message"
+        label="Message"
+        error={form.formState.errors.message}
+      >
         <textarea
           id="message"
           rows={4}
           {...form.register("message")}
           style={{
-            ...fieldStyle,
+            ...baseFieldStyle,
             resize: "none",
-            borderBottomColor:
-              focusedField === "message"
-                ? "var(--accent-primary)"
-                : form.formState.errors.message
-                ? "var(--destructive)"
-                : "var(--border-subtle)",
+            borderBottomColor: getFieldBorderColor(
+              "message",
+              focusedField,
+              !!form.formState.errors.message
+            ),
           }}
           onFocus={() => setFocusedField("message")}
           onBlur={() => setFocusedField(null)}
           aria-describedby="message-error"
           aria-invalid={!!form.formState.errors.message}
         />
-        {form.formState.errors.message && (
-          <p
-            id="message-error"
-            className="mt-1.5 text-xs"
-            style={{ color: "var(--destructive)" }}
-          >
-            {form.formState.errors.message.message}
-          </p>
-        )}
-      </div>
+      </FormField>
 
       <button
         type="submit"
         disabled={form.formState.isSubmitting}
-        className="self-start px-8 py-3 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-[1.03] disabled:opacity-60 disabled:cursor-not-allowed"
+        className="self-start px-8 py-3 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-[1.03] disabled:opacity-60 disabled:cursor-not-allowed bg-accent-primary text-bg-primary"
         style={{
-          background: "var(--accent-primary)",
-          color: "var(--bg-primary)",
           boxShadow:
             "0 0 20px color-mix(in srgb, var(--accent-primary) 25%, transparent)",
         }}

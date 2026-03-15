@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Link as LinkIcon } from "lucide-react";
 import { Project } from "@/lib/projects";
 import { useInView } from "@/hooks/useInView";
+import { useScrollRestoration } from "@/hooks/useScrollRestoration";
 
 interface Props {
   project: Project;
@@ -15,38 +16,12 @@ interface Props {
 const ProjectCard = ({ project, index }: Props) => {
   const cardRef = useInView();
   const imageRight = index % 2 !== 0;
-
-  useEffect(() => {
-    const saved = sessionStorage.getItem("scrollPosition");
-    if (saved) {
-      window.scrollTo({ top: parseInt(saved, 10) });
-      sessionStorage.removeItem("scrollPosition");
-    }
-  }, []);
-
-  const handleClick = () => {
-    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
-  };
+  const { saveScrollPosition } = useScrollRestoration();
 
   return (
     <div
       ref={cardRef as React.RefObject<HTMLDivElement>}
-      className="animate-fade-up group relative rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
-      style={{
-        background: "var(--bg-secondary)",
-        border: "1px solid var(--border-subtle)",
-        boxShadow: "0 0 0 transparent",
-      }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor =
-          "color-mix(in srgb, var(--accent-primary) 40%, transparent)";
-        (e.currentTarget as HTMLElement).style.boxShadow =
-          "0 8px 32px color-mix(in srgb, var(--accent-primary) 8%, transparent)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = "var(--border-subtle)";
-        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 transparent";
-      }}
+      className="animate-fade-up group relative rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 bg-bg-secondary border border-border-subtle hover:border-accent-primary/40 hover:shadow-[0_8px_32px_color-mix(in_srgb,var(--accent-primary)_8%,transparent)]"
     >
       <div
         className={`flex flex-col ${
@@ -55,16 +30,10 @@ const ProjectCard = ({ project, index }: Props) => {
       >
         <div className="flex flex-col gap-4 lg:basis-1/2 z-10">
           <div>
-            <h3
-              className="font-bold text-2xl mb-1"
-              style={{ color: "var(--text-primary)" }}
-            >
+            <h3 className="font-bold text-2xl mb-1 text-text-primary">
               {project.title}
             </h3>
-            <div
-              className="text-sm mb-2"
-              style={{ color: "var(--text-secondary)" }}
-            >
+            <div className="text-sm mb-2 text-text-secondary">
               {project.year}
               {project.client && ` · ${project.client}`}
             </div>
@@ -72,12 +41,10 @@ const ProjectCard = ({ project, index }: Props) => {
               {project.roles.split(" | ").map((role) => (
                 <span
                   key={role}
-                  className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
+                  className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-accent-primary border"
                   style={{
-                    background:
-                      "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
-                    color: "var(--accent-primary)",
-                    border: "1px solid color-mix(in srgb, var(--accent-primary) 25%, transparent)",
+                    background: "color-mix(in srgb, var(--accent-primary) 10%, transparent)",
+                    borderColor: "color-mix(in srgb, var(--accent-primary) 25%, transparent)",
                   }}
                 >
                   {role}
@@ -88,11 +55,7 @@ const ProjectCard = ({ project, index }: Props) => {
 
           <div className="space-y-2">
             {project.shortDescription.map((paragraph, i) => (
-              <p
-                key={i}
-                className="text-sm leading-relaxed"
-                style={{ color: "var(--text-secondary)" }}
-              >
+              <p key={i} className="text-sm leading-relaxed text-text-secondary">
                 {paragraph}
               </p>
             ))}
@@ -100,14 +63,10 @@ const ProjectCard = ({ project, index }: Props) => {
 
           {project.link && (
             <div className="flex items-center gap-1.5">
-              <LinkIcon
-                size={13}
-                style={{ color: "var(--text-secondary)" }}
-              />
+              <LinkIcon size={13} className="text-text-secondary" />
               <Link
                 href={project.link}
-                className="text-xs hover:underline underline-offset-2"
-                style={{ color: "var(--accent-secondary)" }}
+                className="text-xs hover:underline underline-offset-2 text-accent-secondary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -120,12 +79,7 @@ const ProjectCard = ({ project, index }: Props) => {
             {project.techTags.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 rounded-md text-xs font-mono"
-                style={{
-                  background: "var(--bg-tertiary)",
-                  color: "var(--text-secondary)",
-                  border: "1px solid var(--border-subtle)",
-                }}
+                className="px-2.5 py-1 rounded-md text-xs font-mono bg-bg-tertiary text-text-secondary border border-border-subtle"
               >
                 {tech}
               </span>
@@ -135,9 +89,8 @@ const ProjectCard = ({ project, index }: Props) => {
           <div>
             <Link
               href={`/${project.id}`}
-              onClick={handleClick}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group/link"
-              style={{ color: "var(--accent-primary)" }}
+              onClick={saveScrollPosition}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group/link text-accent-primary"
             >
               Read more
               <ArrowUpRight
@@ -149,7 +102,7 @@ const ProjectCard = ({ project, index }: Props) => {
         </div>
 
         <div className="lg:basis-1/2 w-full">
-          <Link href={`/${project.id}`} onClick={handleClick}>
+          <Link href={`/${project.id}`} onClick={saveScrollPosition}>
             <div className="rounded-xl overflow-hidden">
               <Image
                 sizes="(max-width: 1024px) 100vw, 50vw"

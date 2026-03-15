@@ -3,6 +3,7 @@
 import { projects } from "../lib/projects";
 import ProjectCard from "./ProjectCard";
 import { useInView } from "@/hooks/useInView";
+import { workContent } from "@/lib/content";
 
 const Work = () => {
   const headerRef = useInView();
@@ -13,16 +14,11 @@ const Work = () => {
         ref={headerRef as React.RefObject<HTMLDivElement>}
         className="animate-fade-up mb-12"
       >
-        <div className="section-label">Work</div>
-        <h2
-          className="font-extrabold mb-3"
-          style={{ color: "var(--text-primary)", fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
-        >
-          Selected Projects
+        <div className="section-label">{workContent.sectionLabel}</div>
+        <h2 className="font-extrabold mb-3 text-text-primary text-[clamp(1.75rem,3vw,2.5rem)]">
+          {workContent.heading}
         </h2>
-        <p style={{ color: "var(--text-secondary)", fontSize: "1.125rem" }}>
-          Professional projects from the last few years.
-        </p>
+        <p className="text-text-secondary text-lg">{workContent.description}</p>
       </div>
 
       <div className="flex flex-col gap-8">
