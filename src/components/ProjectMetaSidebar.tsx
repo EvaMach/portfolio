@@ -9,7 +9,6 @@ const ProjectMetaSidebar = ({ project }: Props) => {
   const { metaLabels } = projectDetailContent;
   const items = [
     { label: metaLabels.role, value: project.roles },
-    { label: metaLabels.team, value: project.team },
     { label: metaLabels.year, value: project.year },
     project.client ? { label: metaLabels.client, value: project.client } : null,
   ].filter(Boolean) as { label: string; value: string }[];

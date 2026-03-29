@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eva Machová - Frontend Developer",
+  title: "Eva Machová - Software Developer",
   icons: {
     icon: "/img/logo-light.png",
   },

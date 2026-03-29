@@ -18,26 +18,19 @@ const About = () => {
           className="animate-fade-up"
         >
           <p className="mb-5 text-text-primary text-lg leading-[1.75]">
-            After an MA in linguistics, I moved into tech through QA — which
-            gave me a foundation I still rely on:{" "}
+            {aboutContent.p1Prefix}{" "}
             <span className="font-semibold rounded px-1 text-accent-primary bg-[color-mix(in_srgb,var(--accent-primary)_10%,transparent)]">
-              thinking in edge cases, questioning assumptions, caring about what
-              breaks.
+              {aboutContent.p1Highlight}
             </span>{" "}
-            My passion for UX/UI then pulled me into frontend, and after leading
-            a dev team I went deeper — React Native, FastAPI, LLM-integrated
-            backends. That last part feels like a full circle. Turns out
-            designing a system prompt isn&apos;t that far from linguistics. 🙂
+            {aboutContent.p1Suffix}
           </p>
 
           <p className="mb-5 text-text-primary text-lg leading-[1.75]">
-            I care about{" "}
+            {aboutContent.p2Prefix}{" "}
             <span className="font-semibold rounded px-1 text-accent-secondary bg-[color-mix(in_srgb,var(--accent-secondary)_10%,transparent)]">
-              clean, maintainable code
+              {aboutContent.p2Highlight}
             </span>{" "}
-            and like leaving things better than I found them. My goal stays the
-            same: build things that make users go &ldquo;oh, that&apos;s
-            cool.&rdquo;
+            {aboutContent.p2Suffix}
           </p>
         </div>
       </div>
