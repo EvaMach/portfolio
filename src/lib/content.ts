@@ -21,7 +21,10 @@ export const aboutContent = {
   p2Prefix: "I care about",
   p2Highlight: "clean, maintainable code",
   p2Suffix:
-    "and like leaving things better than I found them. My goal stays the same: build things that make users go \u201coh, that\u2019s cool.\u201d",
+    "and like leaving things better than I found them. My goal stays the same: build things that make users go \u201coh, that\u2019s cool.\u201d Lately I\u2019ve been going deeper into",
+  p2Highlight2: "agentic development",
+  p2Suffix2:
+    ", building workflows in Claude Code and exploring what that means for how products get built.",
   journeyLabel: "My journey",
   timeline: [
     { role: "MA Linguistics", years: "2018-2020" },

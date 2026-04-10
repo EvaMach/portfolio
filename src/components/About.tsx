@@ -30,7 +30,11 @@ const About = () => {
             <span className="font-semibold rounded px-1 text-accent-secondary bg-[color-mix(in_srgb,var(--accent-secondary)_10%,transparent)]">
               {aboutContent.p2Highlight}
             </span>{" "}
-            {aboutContent.p2Suffix}
+            {aboutContent.p2Suffix}{" "}
+            <span className="font-semibold rounded px-1 text-accent-tertiary bg-[color-mix(in_srgb,var(--accent-tertiary)_10%,transparent)]">
+              {aboutContent.p2Highlight2}
+            </span>
+            {aboutContent.p2Suffix2}
           </p>
         </div>
       </div>

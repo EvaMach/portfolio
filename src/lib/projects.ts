@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: "AI Companion for Brain Health",
     client: "Tolion Health AI",
     year: "2025-now",
-    roles: "Lead Developer",
+    roles: "Fullstack Developer",
     techTags: [
       "React Native",
       "Expo",
